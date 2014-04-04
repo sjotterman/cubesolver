@@ -237,6 +237,18 @@ class TestCube(unittest.TestCase):
             self.assertEqual(myCube.face['right'][i], 'w')
             self.assertEqual(myCube.face['back'][i], 'r')
 
+    def test_start_then_reorient_down(self):
+        myCube = cube.Cube()
+        myCube.reorient("down")
+
+        for i in range(0,9):
+            self.assertEqual(myCube.face['front'][i], 'r')
+            self.assertEqual(myCube.face['top'][i], 'g')
+            self.assertEqual(myCube.face['left'][i], 'y')
+            self.assertEqual(myCube.face['bottom'][i], 'b')
+            self.assertEqual(myCube.face['right'][i], 'w')
+            self.assertEqual(myCube.face['back'][i], 'o')
+
 if __name__ == "__main__":
     unittest.main()
 

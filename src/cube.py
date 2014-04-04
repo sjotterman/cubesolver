@@ -53,7 +53,12 @@ class Cube(object):
         rel_face_top[8] = temp_square3
 
     def reorient(self, direction):
-
+        if direction == 'down':
+            self.reorient('up')
+            self.reorient('up')
+            self.reorient('up')
+            return
+        
         face_front = self.face['front']
         face_bottom = self.face['bottom']
         face_back = self.face['back']
