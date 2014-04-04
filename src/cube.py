@@ -21,6 +21,12 @@ class Cube(object):
         return True;
 
     def move(self, face, dir):
+        if dir == 'ccw':
+            self.move(face, 'cw')
+            self.move(face, 'cw')
+            self.move(face, 'cw')
+            return
+
         temp_square1 = self.face['front'][2]
         temp_square2 = self.face['front'][5]
         temp_square3 = self.face['front'][8]
