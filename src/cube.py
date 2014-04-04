@@ -20,6 +20,27 @@ class Cube(object):
     def is_solved(self):
         return True;
 
+    def move(self, face, dir):
+        temp_square1 = self.face['front'][2]
+        temp_square2 = self.face['front'][5]
+        temp_square3 = self.face['front'][8]
+
+        self.face['front'][2] = self.face['bottom'][2]
+        self.face['front'][5] = self.face['bottom'][5]
+        self.face['front'][8] = self.face['bottom'][8]
+
+        self.face['bottom'][2] = self.face['back'][2]
+        self.face['bottom'][5] = self.face['back'][5]
+        self.face['bottom'][8] = self.face['back'][8]
+
+        self.face['back'][2] = self.face['top'][2]
+        self.face['back'][5] = self.face['top'][5]
+        self.face['back'][8] = self.face['top'][8]
+
+        self.face['top'][2] = temp_square1
+        self.face['top'][5] = temp_square2
+        self.face['top'][8] = temp_square3
+
     def print_cube(self):
         # top side
         print("   " + 
