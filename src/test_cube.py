@@ -6,7 +6,7 @@ from . import cube
 class TestCube(unittest.TestCase):
     def test_blue_center(self):
         myCube = cube.Cube()
-        self.assertEqual(myCube.blueface[4], 'b')
+        self.assertEqual(myCube.face['b'][4], 'b')
 
 
 if __name__ == "__main__":
