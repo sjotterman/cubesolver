@@ -20,6 +20,9 @@ class Cube(object):
         for i in range(0,9):
             self.face[face][i] = color;
 
+    def is_solved(self):
+        return True;
+
     def print_cube(self):
         print("This will eventually print the cube faces.")
         
