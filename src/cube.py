@@ -27,25 +27,30 @@ class Cube(object):
             self.move(face, 'cw')
             return
 
-        temp_square1 = self.face['front'][2]
-        temp_square2 = self.face['front'][5]
-        temp_square3 = self.face['front'][8]
+        rel_face_front = self.face['front']
+        rel_face_bottom = self.face['bottom']
+        rel_face_back = self.face['back']
+        rel_face_top = self.face['top']
 
-        self.face['front'][2] = self.face['bottom'][2]
-        self.face['front'][5] = self.face['bottom'][5]
-        self.face['front'][8] = self.face['bottom'][8]
+        temp_square1 = rel_face_front[2]
+        temp_square2 = rel_face_front[5]
+        temp_square3 = rel_face_front[8]
 
-        self.face['bottom'][2] = self.face['back'][2]
-        self.face['bottom'][5] = self.face['back'][5]
-        self.face['bottom'][8] = self.face['back'][8]
+        rel_face_front[2] = rel_face_bottom[2]
+        rel_face_front[5] = rel_face_bottom[5]
+        rel_face_front[8] = rel_face_bottom[8]
 
-        self.face['back'][2] = self.face['top'][2]
-        self.face['back'][5] = self.face['top'][5]
-        self.face['back'][8] = self.face['top'][8]
+        rel_face_bottom[2] = rel_face_back[2]
+        rel_face_bottom[5] = rel_face_back[5]
+        rel_face_bottom[8] = rel_face_back[8]
 
-        self.face['top'][2] = temp_square1
-        self.face['top'][5] = temp_square2
-        self.face['top'][8] = temp_square3
+        rel_face_back[2] = rel_face_top[2]
+        rel_face_back[5] = rel_face_top[5]
+        rel_face_back[8] = rel_face_top[8]
+
+        rel_face_top[2] = temp_square1
+        rel_face_top[5] = temp_square2
+        rel_face_top[8] = temp_square3
 
     def print_cube(self):
         # top side
