@@ -4,9 +4,10 @@ import unittest
 from . import cube
 
 class TestCube(unittest.TestCase):
-    def test_blue_center(self):
+    def test_blue_start(self):
         myCube = cube.Cube()
-        self.assertEqual(myCube.face['b'][4], 'b')
+        for i in range(0,9):
+            self.assertEqual(myCube.face['b'][i], 'b')
 
 
 if __name__ == "__main__":
