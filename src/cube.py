@@ -6,9 +6,6 @@ class Cube(object):
 
     def __init__(self):
         self.face = collections.defaultdict(dict)
-        ##for key in ['r','b','y','o','w','g']:
-            ##for i in range(0,9):
-                ##self.face[key][i] = key
         self.setup_face('front', 'b')
         self.setup_face('top', 'r')
         self.setup_face('left', 'y')
