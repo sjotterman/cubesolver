@@ -24,8 +24,6 @@ class Cube(object):
         return True;
 
     def print_cube(self):
-        print("This will eventually print the cube faces.")
-        
         # top side
         print("   " + 
              self.face['top'][0] +
