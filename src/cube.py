@@ -52,6 +52,93 @@ class Cube(object):
         rel_face_top[5] = temp_square2
         rel_face_top[8] = temp_square3
 
+    def reorient(self, direction):
+
+        face_front = self.face['front']
+        face_bottom = self.face['bottom']
+        face_back = self.face['back']
+        face_top = self.face['top']
+        face_right = self.face['right']
+        face_left = self.face['left']
+
+        temp_square0 = face_front[0]
+        temp_square1 = face_front[1]
+        temp_square2 = face_front[2]
+        temp_square3 = face_front[3]
+        temp_square4 = face_front[4]
+        temp_square5 = face_front[5]
+        temp_square6 = face_front[6]
+        temp_square7 = face_front[7]
+        temp_square8 = face_front[8]
+
+        face_front[0] = face_bottom[0]
+        face_front[1] = face_bottom[1]
+        face_front[2] = face_bottom[2]
+        face_front[3] = face_bottom[3]
+        face_front[4] = face_bottom[4]
+        face_front[5] = face_bottom[5]
+        face_front[6] = face_bottom[6]
+        face_front[7] = face_bottom[7]
+        face_front[8] = face_bottom[8]
+
+        face_bottom[0] = face_back[0]
+        face_bottom[1] = face_back[1]
+        face_bottom[2] = face_back[2]
+        face_bottom[3] = face_back[3]
+        face_bottom[4] = face_back[4]
+        face_bottom[5] = face_back[5]
+        face_bottom[6] = face_back[6]
+        face_bottom[7] = face_back[7]
+        face_bottom[8] = face_back[8]
+
+        face_back[0] = face_top[0]
+        face_back[1] = face_top[1]
+        face_back[2] = face_top[2]
+        face_back[3] = face_top[3]
+        face_back[4] = face_top[4]
+        face_back[5] = face_top[5]
+        face_back[6] = face_top[6]
+        face_back[7] = face_top[7]
+        face_back[8] = face_top[8]
+
+        face_top[0] = temp_square0
+        face_top[1] = temp_square1
+        face_top[2] = temp_square2
+        face_top[3] = temp_square3
+        face_top[4] = temp_square4
+        face_top[5] = temp_square5
+        face_top[6] = temp_square6
+        face_top[7] = temp_square7
+        face_top[8] = temp_square8
+
+        # right side cw
+        temp_square0 = face_right[0]
+        temp_square1 = face_right[1]
+        temp_square2 = face_right[2]
+        face_right[0] = face_right[6]
+        face_right[1] = face_right[3]
+        face_right[2] = face_right[0]
+        face_right[3] = face_right[7]
+        face_right[6] = face_right[8]
+        face_right[7] = face_right[5]
+        face_right[8] = temp_square2
+        face_right[5] = temp_square1
+        face_right[2] = temp_square0
+        
+        # left side ccw
+        temp_square0 = face_left[0]
+        temp_square1 = face_left[1]
+        #temp_square2 = face_left[2]
+        face_left[0] = face_left[2]
+        face_left[1] = face_left[5]
+        face_left[2] = face_left[8]
+        face_left[5] = face_left[7]
+        face_left[8] = face_left[6]
+        face_left[7] = face_left[3]
+        face_left[6] = temp_square0
+        face_left[3] = temp_square1
+
+
     def print_cube(self):
         # top side
         print("   " + 
