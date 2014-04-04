@@ -10,3 +10,5 @@ class Cube(object):
             for i in range(0,9):
                 self.face[key][i] = key
 
+    def print_cube(self):
+        print("This will eventually print the cube faces.")
