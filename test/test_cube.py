@@ -1,7 +1,7 @@
 # testCube.py
 
 import unittest
-from . import cube
+from ..src import cube
 
 class TestCube(unittest.TestCase):
     def test_blue_start(self):

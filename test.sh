@@ -1,3 +1,3 @@
 #/usr/bin/sh
 
-nosetests -w src
+nosetests -w test
