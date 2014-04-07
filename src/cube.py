@@ -184,6 +184,27 @@ class Cube(object):
             face_left[4] = temp_square2
             face_left[3] = temp_square3
 
+        if dir == 'bright':
+            temp_square1 = face_back[8]
+            temp_square2 = face_back[7]
+            temp_square3 = face_back[6]
+
+            face_back[8] = face_right[0]
+            face_back[7] = face_right[1]
+            face_back[6] = face_right[2]
+
+            face_right[0] = face_front[0]
+            face_right[1] = face_front[1]
+            face_right[2] = face_front[2]
+
+            face_front[0] = face_left[0]
+            face_front[1] = face_left[1]
+            face_front[2] = face_left[2]
+
+            face_left[0] = temp_square1
+            face_left[1] = temp_square2
+            face_left[2] = temp_square3
+
 
     def reorient(self, direction):
         if direction == 'down':
