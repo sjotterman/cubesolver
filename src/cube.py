@@ -27,74 +27,74 @@ class Cube(object):
             self.move(face, 'cw')
             return
 
-        rel_face_front = self.face['front']
-        rel_face_bottom = self.face['bottom']
-        rel_face_back = self.face['back']
-        rel_face_top = self.face['top']
+        face_front = self.face['front']
+        face_bottom = self.face['bottom']
+        face_back = self.face['back']
+        face_top = self.face['top']
         face_right = self.face['right']
 
         if dir == 'cw':
-            temp_square1 = rel_face_front[2]
-            temp_square2 = rel_face_front[5]
-            temp_square3 = rel_face_front[8]
+            temp_square1 = face_front[2]
+            temp_square2 = face_front[5]
+            temp_square3 = face_front[8]
 
-            rel_face_front[2] = rel_face_bottom[2]
-            rel_face_front[5] = rel_face_bottom[5]
-            rel_face_front[8] = rel_face_bottom[8]
+            face_front[2] = face_bottom[2]
+            face_front[5] = face_bottom[5]
+            face_front[8] = face_bottom[8]
 
-            rel_face_bottom[2] = rel_face_back[2]
-            rel_face_bottom[5] = rel_face_back[5]
-            rel_face_bottom[8] = rel_face_back[8]
+            face_bottom[2] = face_back[2]
+            face_bottom[5] = face_back[5]
+            face_bottom[8] = face_back[8]
 
-            rel_face_back[2] = rel_face_top[2]
-            rel_face_back[5] = rel_face_top[5]
-            rel_face_back[8] = rel_face_top[8]
+            face_back[2] = face_top[2]
+            face_back[5] = face_top[5]
+            face_back[8] = face_top[8]
 
-            rel_face_top[2] = temp_square1
-            rel_face_top[5] = temp_square2
-            rel_face_top[8] = temp_square3
+            face_top[2] = temp_square1
+            face_top[5] = temp_square2
+            face_top[8] = temp_square3
 
         if dir == 'up':
-            temp_square1 = rel_face_front[1]
-            temp_square2 = rel_face_front[4]
-            temp_square3 = rel_face_front[7]
+            temp_square1 = face_front[1]
+            temp_square2 = face_front[4]
+            temp_square3 = face_front[7]
 
-            rel_face_front[1] = rel_face_bottom[1]
-            rel_face_front[4] = rel_face_bottom[4]
-            rel_face_front[7] = rel_face_bottom[7]
+            face_front[1] = face_bottom[1]
+            face_front[4] = face_bottom[4]
+            face_front[7] = face_bottom[7]
 
-            rel_face_bottom[1] = rel_face_back[1]
-            rel_face_bottom[4] = rel_face_back[4]
-            rel_face_bottom[7] = rel_face_back[7]
+            face_bottom[1] = face_back[1]
+            face_bottom[4] = face_back[4]
+            face_bottom[7] = face_back[7]
 
-            rel_face_back[1] = rel_face_top[1]
-            rel_face_back[4] = rel_face_top[4]
-            rel_face_back[7] = rel_face_top[7]
+            face_back[1] = face_top[1]
+            face_back[4] = face_top[4]
+            face_back[7] = face_top[7]
 
-            rel_face_top[1] = temp_square1
-            rel_face_top[4] = temp_square2
-            rel_face_top[7] = temp_square3
+            face_top[1] = temp_square1
+            face_top[4] = temp_square2
+            face_top[7] = temp_square3
 
         if dir == 'rup':
-            temp_square1 = rel_face_front[2]
-            temp_square2 = rel_face_front[5]
-            temp_square3 = rel_face_front[8]
+            temp_square1 = face_front[2]
+            temp_square2 = face_front[5]
+            temp_square3 = face_front[8]
 
-            rel_face_front[2] = rel_face_bottom[2]
-            rel_face_front[5] = rel_face_bottom[5]
-            rel_face_front[8] = rel_face_bottom[8]
+            face_front[2] = face_bottom[2]
+            face_front[5] = face_bottom[5]
+            face_front[8] = face_bottom[8]
 
-            rel_face_bottom[2] = rel_face_back[2]
-            rel_face_bottom[5] = rel_face_back[5]
-            rel_face_bottom[8] = rel_face_back[8]
+            face_bottom[2] = face_back[2]
+            face_bottom[5] = face_back[5]
+            face_bottom[8] = face_back[8]
 
-            rel_face_back[2] = rel_face_top[2]
-            rel_face_back[5] = rel_face_top[5]
-            rel_face_back[8] = rel_face_top[8]
+            face_back[2] = face_top[2]
+            face_back[5] = face_top[5]
+            face_back[8] = face_top[8]
 
-            rel_face_top[2] = temp_square1
-            rel_face_top[5] = temp_square2
-            rel_face_top[8] = temp_square3
+            face_top[2] = temp_square1
+            face_top[5] = temp_square2
+            face_top[8] = temp_square3
 
             # right side cw
             temp_square0 = face_right[0]
