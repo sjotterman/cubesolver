@@ -6,11 +6,12 @@ def main():
    testCube = cube.Cube()
    testCube.print_cube() 
 
-   print("Front rup")
+   testCube.print_cube()
+   print("front rup")
    testCube.move('front', 'rup')
    testCube.print_cube()
-   print("Front bright")
-   testCube.move('front', 'bright')
+   print("front tright")
+   testCube.move('front', 'tright')
    testCube.print_cube()
 
 if __name__ == "__main__":
