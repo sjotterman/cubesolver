@@ -58,7 +58,7 @@ class Cube(object):
             self.reorient('left')
             return
 
-        if dir == 'cw':
+        if dir == 'cw' and face == 'right':
             temp_square1 = face_front[2]
             temp_square2 = face_front[5]
             temp_square3 = face_front[8]
@@ -78,6 +78,7 @@ class Cube(object):
             face_top[2] = temp_square1
             face_top[5] = temp_square2
             face_top[8] = temp_square3
+            return
 
         if dir == 'up':
             self.front_cubes_up('middle')
@@ -95,6 +96,7 @@ class Cube(object):
             self.rotate_face('left','ccw')
 
         if dir == 'right':
+            #self.front_cubes_right('middle')
             temp_square1 = face_back[3]
             temp_square2 = face_back[4]
             temp_square3 = face_back[5]
@@ -116,49 +118,13 @@ class Cube(object):
             face_left[3] = temp_square3
 
         if dir == 'tright':
-            temp_square1 = face_back[8]
-            temp_square2 = face_back[7]
-            temp_square3 = face_back[6]
-
-            face_back[8] = face_right[0]
-            face_back[7] = face_right[1]
-            face_back[6] = face_right[2]
-
-            face_right[0] = face_front[0]
-            face_right[1] = face_front[1]
-            face_right[2] = face_front[2]
-
-            face_front[0] = face_left[0]
-            face_front[1] = face_left[1]
-            face_front[2] = face_left[2]
-
-            face_left[0] = temp_square1
-            face_left[1] = temp_square2
-            face_left[2] = temp_square3
+            self.front_cubes_right('top')
             
             # top side ccw
             self.rotate_face('top','ccw')
 
         if dir == 'bright':
-            temp_square1 = face_back[2]
-            temp_square2 = face_back[1]
-            temp_square3 = face_back[0]
-
-            face_back[0] = face_right[8]
-            face_back[1] = face_right[7]
-            face_back[2] = face_right[6]
-
-            face_right[6] = face_front[6]
-            face_right[7] = face_front[7]
-            face_right[8] = face_front[8]
-
-            face_front[6] = face_left[6]
-            face_front[7] = face_left[7]
-            face_front[8] = face_left[8]
-
-            face_left[6] = temp_square1
-            face_left[7] = temp_square2
-            face_left[8] = temp_square3
+            self.front_cubes_right('bottom')
             
             # bottom side cw
             self.rotate_face('bottom', 'cw')
@@ -219,6 +185,49 @@ class Cube(object):
         self.face['top'][pos2] = temp_square2
         self.face['top'][pos3] = temp_square3
 
+    def front_cubes_right(self, row):
+        pos1 = 3
+        pos2 = 4
+        pos3 = 5
+        backpos1 = 5
+        backpos2 = 4
+        backpos3 = 3
+        if row == 'top':
+            pos1 = 0
+            pos2 = 1
+            pos3 = 2
+            backpos1 = 6
+            backpos2 = 7
+            backpos3 = 8
+
+        if row == 'bottom':
+            pos1 = 6
+            pos2 = 7
+            pos3 = 8
+            backpos1 = 0
+            backpos2 = 1
+            backpos3 = 2
+        temp_square1 = self.face['back'][backpos3]
+        temp_square2 = self.face['back'][backpos2]
+        temp_square3 = self.face['back'][backpos1]
+
+        self.face['back'][backpos1] = self.face['right'][pos3]
+        self.face['back'][backpos2] = self.face['right'][pos2]
+        self.face['back'][backpos3] = self.face['right'][pos1]
+
+        self.face['right'][pos1] = self.face['front'][pos1]
+        self.face['right'][pos2] = self.face['front'][pos2]
+        self.face['right'][pos3] = self.face['front'][pos3]
+
+        self.face['front'][pos1] = self.face['left'][pos1]
+        self.face['front'][pos2] = self.face['left'][pos2]
+        self.face['front'][pos3] = self.face['left'][pos3]
+
+        self.face['left'][pos1] = temp_square1
+        self.face['left'][pos2] = temp_square2
+        self.face['left'][pos3] = temp_square3
+
+        
     def reorient(self, direction):
         if direction == 'down':
             self.reorient('up')
