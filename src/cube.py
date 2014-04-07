@@ -248,6 +248,12 @@ class Cube(object):
             self.reorient('up')
             return
         
+        if direction == 'left':
+            self.reorient('right')
+            self.reorient('right')
+            self.reorient('right')
+            return
+
         if direction == 'up':
             self.move('front','lup')
             self.move('front','up')
