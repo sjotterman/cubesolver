@@ -218,6 +218,26 @@ class Cube(object):
             face_top[8] = temp_square0
             face_top[5] = temp_square1
 
+        if dir == 'bright':
+            temp_square1 = face_back[2]
+            temp_square2 = face_back[1]
+            temp_square3 = face_back[0]
+
+            face_back[0] = face_right[8]
+            face_back[1] = face_right[7]
+            face_back[2] = face_right[6]
+
+            face_right[6] = face_front[6]
+            face_right[7] = face_front[7]
+            face_right[8] = face_front[8]
+
+            face_front[6] = face_left[6]
+            face_front[7] = face_left[7]
+            face_front[8] = face_left[8]
+
+            face_left[6] = temp_square1
+            face_left[7] = temp_square2
+            face_left[8] = temp_square3
 
 
 
