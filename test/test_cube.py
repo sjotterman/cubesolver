@@ -851,6 +851,71 @@ class TestCube(unittest.TestCase):
         self.assertEqual(myCube.face['back'][6], 'g')
         self.assertEqual(myCube.face['back'][7], 'g')
         self.assertEqual(myCube.face['back'][8], 'r')
+
+    def test_start_front_rup_front_tright(self):
+        myCube = cube.Cube()
+        myCube.move('front', 'rup')
+        myCube.move('front', 'tright')
+
+        self.assertEqual(myCube.face['front'][0], 'y')
+        self.assertEqual(myCube.face['front'][1], 'y')
+        self.assertEqual(myCube.face['front'][2], 'y')
+        self.assertEqual(myCube.face['front'][3], 'b')
+        self.assertEqual(myCube.face['front'][4], 'b')
+        self.assertEqual(myCube.face['front'][5], 'o')
+        self.assertEqual(myCube.face['front'][6], 'b')
+        self.assertEqual(myCube.face['front'][7], 'b')
+        self.assertEqual(myCube.face['front'][8], 'o')
+
+        self.assertEqual(myCube.face['left'][0], 'r')
+        self.assertEqual(myCube.face['left'][1], 'g')
+        self.assertEqual(myCube.face['left'][2], 'g')
+        self.assertEqual(myCube.face['left'][3], 'y')
+        self.assertEqual(myCube.face['left'][4], 'y')
+        self.assertEqual(myCube.face['left'][5], 'y')
+        self.assertEqual(myCube.face['left'][6], 'y')
+        self.assertEqual(myCube.face['left'][7], 'y')
+        self.assertEqual(myCube.face['left'][8], 'y')
+
+        self.assertEqual(myCube.face['right'][0], 'b')
+        self.assertEqual(myCube.face['right'][1], 'b')
+        self.assertEqual(myCube.face['right'][2], 'o')
+        self.assertEqual(myCube.face['right'][3], 'w')
+        self.assertEqual(myCube.face['right'][4], 'w')
+        self.assertEqual(myCube.face['right'][5], 'w')
+        self.assertEqual(myCube.face['right'][6], 'w')
+        self.assertEqual(myCube.face['right'][7], 'w')
+        self.assertEqual(myCube.face['right'][8], 'w')
+        
+        self.assertEqual(myCube.face['top'][0], 'b')
+        self.assertEqual(myCube.face['top'][1], 'b')
+        self.assertEqual(myCube.face['top'][2], 'b')
+        self.assertEqual(myCube.face['top'][3], 'r')
+        self.assertEqual(myCube.face['top'][4], 'r')
+        self.assertEqual(myCube.face['top'][5], 'r')
+        self.assertEqual(myCube.face['top'][6], 'r')
+        self.assertEqual(myCube.face['top'][7], 'r')
+        self.assertEqual(myCube.face['top'][8], 'r')
+
+        self.assertEqual(myCube.face['bottom'][0], 'o')
+        self.assertEqual(myCube.face['bottom'][1], 'o')
+        self.assertEqual(myCube.face['bottom'][2], 'g')
+        self.assertEqual(myCube.face['bottom'][3], 'o')
+        self.assertEqual(myCube.face['bottom'][4], 'o')
+        self.assertEqual(myCube.face['bottom'][5], 'g')
+        self.assertEqual(myCube.face['bottom'][6], 'o')
+        self.assertEqual(myCube.face['bottom'][7], 'o')
+        self.assertEqual(myCube.face['bottom'][8], 'g')
+        
+        self.assertEqual(myCube.face['back'][0], 'g')
+        self.assertEqual(myCube.face['back'][1], 'g')
+        self.assertEqual(myCube.face['back'][2], 'r')
+        self.assertEqual(myCube.face['back'][3], 'g')
+        self.assertEqual(myCube.face['back'][4], 'g')
+        self.assertEqual(myCube.face['back'][5], 'r')
+        self.assertEqual(myCube.face['back'][6], 'w')
+        self.assertEqual(myCube.face['back'][7], 'w')
+        self.assertEqual(myCube.face['back'][8], 'w')
     """
     def test_start_then_front_cw(self):
         myCube = cube.Cube()
@@ -908,7 +973,6 @@ class TestCube(unittest.TestCase):
         self.assertEqual(myCube.face['bottom'][7], 'o')
         self.assertEqual(myCube.face['bottom'][8], 'o')
         """
-        
         
 
 if __name__ == "__main__":
