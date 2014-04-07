@@ -32,25 +32,47 @@ class Cube(object):
         rel_face_back = self.face['back']
         rel_face_top = self.face['top']
 
-        temp_square1 = rel_face_front[2]
-        temp_square2 = rel_face_front[5]
-        temp_square3 = rel_face_front[8]
+        if dir == 'cw':
+            temp_square1 = rel_face_front[2]
+            temp_square2 = rel_face_front[5]
+            temp_square3 = rel_face_front[8]
 
-        rel_face_front[2] = rel_face_bottom[2]
-        rel_face_front[5] = rel_face_bottom[5]
-        rel_face_front[8] = rel_face_bottom[8]
+            rel_face_front[2] = rel_face_bottom[2]
+            rel_face_front[5] = rel_face_bottom[5]
+            rel_face_front[8] = rel_face_bottom[8]
 
-        rel_face_bottom[2] = rel_face_back[2]
-        rel_face_bottom[5] = rel_face_back[5]
-        rel_face_bottom[8] = rel_face_back[8]
+            rel_face_bottom[2] = rel_face_back[2]
+            rel_face_bottom[5] = rel_face_back[5]
+            rel_face_bottom[8] = rel_face_back[8]
 
-        rel_face_back[2] = rel_face_top[2]
-        rel_face_back[5] = rel_face_top[5]
-        rel_face_back[8] = rel_face_top[8]
+            rel_face_back[2] = rel_face_top[2]
+            rel_face_back[5] = rel_face_top[5]
+            rel_face_back[8] = rel_face_top[8]
 
-        rel_face_top[2] = temp_square1
-        rel_face_top[5] = temp_square2
-        rel_face_top[8] = temp_square3
+            rel_face_top[2] = temp_square1
+            rel_face_top[5] = temp_square2
+            rel_face_top[8] = temp_square3
+
+        if dir == 'up':
+            temp_square1 = rel_face_front[1]
+            temp_square2 = rel_face_front[4]
+            temp_square3 = rel_face_front[7]
+
+            rel_face_front[1] = rel_face_bottom[1]
+            rel_face_front[4] = rel_face_bottom[4]
+            rel_face_front[7] = rel_face_bottom[7]
+
+            rel_face_bottom[1] = rel_face_back[1]
+            rel_face_bottom[4] = rel_face_back[4]
+            rel_face_bottom[7] = rel_face_back[7]
+
+            rel_face_back[1] = rel_face_top[1]
+            rel_face_back[4] = rel_face_top[4]
+            rel_face_back[7] = rel_face_top[7]
+
+            rel_face_top[1] = temp_square1
+            rel_face_top[4] = temp_square2
+            rel_face_top[7] = temp_square3
 
     def reorient(self, direction):
         if direction == 'down':

@@ -249,7 +249,6 @@ class TestCube(unittest.TestCase):
             self.assertEqual(myCube.face['right'][i], 'w')
             self.assertEqual(myCube.face['back'][i], 'o')
 
-    """
     def test_start_then_front_up(self):
         myCube = cube.Cube()
         myCube.move('front', 'up')
@@ -306,7 +305,6 @@ class TestCube(unittest.TestCase):
         self.assertEqual(myCube.face['back'][6], 'g')
         self.assertEqual(myCube.face['back'][7], 'r')
         self.assertEqual(myCube.face['back'][8], 'g')
-        """
 
     def test_start_then_front_down(self):
         pass
