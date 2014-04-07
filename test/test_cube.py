@@ -649,9 +649,9 @@ class TestCube(unittest.TestCase):
         self.assertEqual(myCube.face['left'][7], 'y')
         self.assertEqual(myCube.face['left'][8], 'y')
 
-    def test_start_then_front_bright(self):
+    def test_start_then_front_tright(self):
         myCube = cube.Cube()
-        myCube.move('front', 'bright')
+        myCube.move('front', 'tright')
         
         # top side doesn't change
         for i in range(0,9):
