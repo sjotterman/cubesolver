@@ -96,26 +96,7 @@ class Cube(object):
             self.rotate_face('left','ccw')
 
         if dir == 'right':
-            #self.front_cubes_right('middle')
-            temp_square1 = face_back[3]
-            temp_square2 = face_back[4]
-            temp_square3 = face_back[5]
-
-            face_back[5] = face_right[3]
-            face_back[4] = face_right[4]
-            face_back[3] = face_right[5]
-
-            face_right[3] = face_front[3]
-            face_right[4] = face_front[4]
-            face_right[5] = face_front[5]
-
-            face_front[3] = face_left[3]
-            face_front[4] = face_left[4]
-            face_front[5] = face_left[5]
-
-            face_left[5] = temp_square1
-            face_left[4] = temp_square2
-            face_left[3] = temp_square3
+            self.front_cubes_right('middle')
 
         if dir == 'tright':
             self.front_cubes_right('top')
@@ -189,9 +170,9 @@ class Cube(object):
         pos1 = 3
         pos2 = 4
         pos3 = 5
-        backpos1 = 5
+        backpos1 = 3
         backpos2 = 4
-        backpos3 = 3
+        backpos3 = 5
         if row == 'top':
             pos1 = 0
             pos2 = 1
