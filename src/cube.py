@@ -27,6 +27,12 @@ class Cube(object):
             self.move(face, 'cw')
             return
 
+        if dir == 'down':
+            self.move(face, 'up')
+            self.move(face, 'up')
+            self.move(face, 'up')
+            return
+
         face_front = self.face['front']
         face_bottom = self.face['bottom']
         face_back = self.face['back']
