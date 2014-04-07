@@ -248,9 +248,15 @@ class Cube(object):
             self.reorient('up')
             return
         
-        self.move('front','lup')
-        self.move('front','up')
-        self.move('front','rup')
+        if direction == 'up':
+            self.move('front','lup')
+            self.move('front','up')
+            self.move('front','rup')
+        
+        if direction == 'right':
+            self.move('front','tright')
+            self.move('front','right')
+            self.move('fromt','bright')
 
     def print_cube(self):
         # top side
