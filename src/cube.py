@@ -122,18 +122,7 @@ class Cube(object):
             face_top[8] = temp_square3
 
             # right side cw
-            temp_square0 = face_right[0]
-            temp_square1 = face_right[1]
-            temp_square2 = face_right[2]
-            face_right[0] = face_right[6]
-            face_right[1] = face_right[3]
-            face_right[2] = face_right[0]
-            face_right[3] = face_right[7]
-            face_right[6] = face_right[8]
-            face_right[7] = face_right[5]
-            face_right[8] = temp_square2
-            face_right[5] = temp_square1
-            face_right[2] = temp_square0
+            self.rotate_face('right','cw')
 
         if dir == 'lup':
             temp_square1 = face_front[0]
@@ -157,17 +146,7 @@ class Cube(object):
             face_top[6] = temp_square3
 
             # left side ccw
-            temp_square0 = face_left[6]
-            temp_square1 = face_left[7]
-            temp_square2 = face_left[8]
-            face_left[0] = face_left[2]
-            face_left[1] = face_left[5]
-            face_left[2] = face_left[8]
-            face_left[3] = face_left[1]
-            face_left[6] = face_left[0]
-            face_left[7] = face_left[3]
-            face_left[8] = temp_square0
-            face_left[5] = temp_square1
+            self.rotate_face('left','ccw')
 
         if dir == 'right':
             temp_square1 = face_back[3]
@@ -212,16 +191,7 @@ class Cube(object):
             face_left[2] = temp_square3
             
             # top side ccw
-            temp_square0 = face_top[1]
-            temp_square1 = face_top[2]
-            face_top[1] = face_top[5]
-            face_top[2] = face_top[8]
-            face_top[5] = face_top[7]
-            face_top[8] = face_top[6]
-            face_top[7] = face_top[3]
-            face_top[6] = face_top[0]
-            face_top[3] = temp_square0 
-            face_top[0] = temp_square1
+            self.rotate_face('top','ccw')
 
         if dir == 'bright':
             temp_square1 = face_back[2]
@@ -245,19 +215,29 @@ class Cube(object):
             face_left[8] = temp_square3
             
             # bottom side cw
-            temp_square0 = face_bottom[0]
-            temp_square1 = face_bottom[1]
-            temp_square2 = face_bottom[2]
-            face_bottom[0] = face_bottom[6]
-            face_bottom[1] = face_bottom[3]
-            face_bottom[2] = face_bottom[0]
-            face_bottom[3] = face_bottom[7]
-            face_bottom[6] = face_bottom[8]
-            face_bottom[7] = face_bottom[5]
-            face_bottom[8] = temp_square2
-            face_bottom[5] = temp_square1
-            face_bottom[2] = temp_square0
+            self.rotate_face('bottom', 'cw')
 
+    def rotate_face(self, face, dir):
+        if dir == 'ccw':
+            self.rotate_face(face,'cw')
+            self.rotate_face(face,'cw')
+            self.rotate_face(face,'cw')
+            return
+
+        temp_face = self.face[face]
+
+        temp_square0 = temp_face[0]
+        temp_square1 = temp_face[1]
+        temp_square2 = temp_face[2]
+        temp_face[0] = temp_face[6]
+        temp_face[1] = temp_face[3]
+        temp_face[2] = temp_face[0]
+        temp_face[3] = temp_face[7]
+        temp_face[6] = temp_face[8]
+        temp_face[7] = temp_face[5]
+        temp_face[8] = temp_square2
+        temp_face[5] = temp_square1
+        temp_face[2] = temp_square0
 
 
     def reorient(self, direction):
