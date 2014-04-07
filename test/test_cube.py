@@ -787,17 +787,6 @@ class TestCube(unittest.TestCase):
             self.assertEqual(myCube.face['right'][i], 'g')
             self.assertEqual(myCube.face['back'][i], 'y')
 
-"""
-    def test_start_then_front_left(self):
-        pass
-
-    def test_start_then_reorient_left(self):
-        pass
-
-    def test_start_then_reorient_right(self):
-        pass
-"""
-
 if __name__ == "__main__":
     unittest.main()
 
