@@ -45,6 +45,12 @@ class Cube(object):
             self.move(face, 'rup')
             return
 
+        if face == 'right':
+            self.reorient('left')
+            self.move('front', dir)
+            self.reorient('right')
+            return
+
         face_front = self.face['front']
         face_bottom = self.face['bottom']
         face_back = self.face['back']
@@ -52,32 +58,10 @@ class Cube(object):
         face_right = self.face['right']
         face_left = self.face['left']
 
-        if dir == 'cw' and face == 'front':
+        if dir == 'cw':
             self.reorient('right')
             self.move('front', 'rup')
             self.reorient('left')
-            return
-
-        if dir == 'cw' and face == 'right':
-            temp_square1 = face_front[2]
-            temp_square2 = face_front[5]
-            temp_square3 = face_front[8]
-
-            face_front[2] = face_bottom[2]
-            face_front[5] = face_bottom[5]
-            face_front[8] = face_bottom[8]
-
-            face_bottom[2] = face_back[2]
-            face_bottom[5] = face_back[5]
-            face_bottom[8] = face_back[8]
-
-            face_back[2] = face_top[2]
-            face_back[5] = face_top[5]
-            face_back[8] = face_top[8]
-
-            face_top[2] = temp_square1
-            face_top[5] = temp_square2
-            face_top[8] = temp_square3
             return
 
         if dir == 'up':
