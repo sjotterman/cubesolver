@@ -301,7 +301,7 @@ class Cube(object):
              self.face['back'][7] +
              self.face['back'][8] + "   ");
 
-    def solvedStatus(self):
+    def solved_status(self):
         status = 100.0
         total_complete = 0
         for face in ('front','top','bottom','left', 'right','back'):
