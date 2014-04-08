@@ -216,6 +216,11 @@ class Cube(object):
             self.move('front','right')
             self.move('fromt','bright')
 
+        if direction == 'cw':
+            self.reorient('left')
+            self.reorient('down')
+            self.reorient('right')
+
     def print_cube(self):
         # top side
         print("   " + 

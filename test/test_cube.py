@@ -1117,6 +1117,18 @@ class TestCube(unittest.TestCase):
         self.assertTrue(myCube.solvedStatus() > 77,
             "Status = " + str(myCube.solvedStatus()))
 
+    def test_start_reorient_cw(self):
+        myCube = cube.Cube()
+        myCube.reorient('cw')
+        for i in range(0,9):
+            self.assertEqual(myCube.face['front'][i], 'b')
+            self.assertEqual(myCube.face['top'][i], 'y')
+            self.assertEqual(myCube.face['left'][i], 'o')
+            self.assertEqual(myCube.face['bottom'][i], 'w')
+            self.assertEqual(myCube.face['right'][i], 'r')
+            self.assertEqual(myCube.face['back'][i], 'g')
+
+
 if __name__ == "__main__":
     unittest.main()
 
