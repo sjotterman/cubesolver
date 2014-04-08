@@ -1104,6 +1104,10 @@ class TestCube(unittest.TestCase):
         self.assertEqual(myCube.face['back'][6], 'w')
         self.assertEqual(myCube.face['back'][7], 'w')
         self.assertEqual(myCube.face['back'][8], 'o')
+        
+    def test_start_solved_status(self):
+        myCube = cube.Cube()
+        self.assertEqual(myCube.solvedStatus(), 100)
 
 if __name__ == "__main__":
     unittest.main()

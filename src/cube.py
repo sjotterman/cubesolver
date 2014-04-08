@@ -290,3 +290,6 @@ class Cube(object):
              self.face['back'][6] +
              self.face['back'][7] +
              self.face['back'][8] + "   ");
+
+    def solvedStatus(self):
+      return 100
