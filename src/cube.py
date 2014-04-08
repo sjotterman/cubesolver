@@ -292,4 +292,14 @@ class Cube(object):
              self.face['back'][8] + "   ");
 
     def solvedStatus(self):
-      return 100
+        status = 100.0
+        total_complete = 0
+        for face in ('front','top','bottom','left', 'right','back'):
+            color = self.face[face][4]
+            face_complete = 0
+            for i in range(0,9):
+               if self.face[face][i] == color:
+                    face_complete += 1
+            total_complete += face_complete
+        status = (total_complete / 54.0) * 100
+        return status

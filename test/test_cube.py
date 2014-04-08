@@ -1108,6 +1108,14 @@ class TestCube(unittest.TestCase):
     def test_start_solved_status(self):
         myCube = cube.Cube()
         self.assertEqual(myCube.solvedStatus(), 100)
+    
+    def test_start_rup_solved_status(self):
+        myCube = cube.Cube()
+        myCube.move('front', 'rup')
+        self.assertTrue(myCube.solvedStatus() < 78,
+            "Status = " + str(myCube.solvedStatus()))
+        self.assertTrue(myCube.solvedStatus() > 77,
+            "Status = " + str(myCube.solvedStatus()))
 
 if __name__ == "__main__":
     unittest.main()
