@@ -313,3 +313,6 @@ class Cube(object):
             total_complete += face_complete
         status = (total_complete / 54.0) * 100
         return status
+
+    def isFirstLayerSolved(self, start_color):
+      return True
