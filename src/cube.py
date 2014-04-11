@@ -316,7 +316,11 @@ class Cube(object):
 
     def isFirstLayerSolved(self, start_color):
       status = True
+      firstLayerFace = 'front'
+      for face in ('front','top','bottom','left', 'right','back'):
+        if self.face[face][4] == start_color:
+          firstLayerFace = face
       for i in range(0,9):
-        if self.face['front'][i] != start_color:
+        if self.face[firstLayerFace][i] != start_color:
           status = False
       return status

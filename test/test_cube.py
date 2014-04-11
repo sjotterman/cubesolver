@@ -1142,6 +1142,11 @@ class TestCube(unittest.TestCase):
 
     def test_start_blue_face_solved(self):
         myCube = cube.Cube()
+        myCube.reorient('up')
+        self.assertEqual(myCube.isFirstLayerSolved('b'), True)
+    
+    def test_start_reorient_up_blue_face_solved(self):
+        myCube = cube.Cube()
         self.assertEqual(myCube.isFirstLayerSolved('b'), True)
 
     def test_start_front_rup_blue_face_solved(self):
