@@ -1144,6 +1144,12 @@ class TestCube(unittest.TestCase):
         myCube = cube.Cube()
         self.assertEqual(myCube.isFirstLayerSolved('b'), True)
 
+    def test_start_front_rup_blue_face_solved(self):
+        myCube = cube.Cube()
+        myCube.move('front', 'rup')
+        self.assertEqual(myCube.isFirstLayerSolved('b'), False)
+
+
 if __name__ == "__main__":
     unittest.main()
 

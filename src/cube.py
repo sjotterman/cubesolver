@@ -315,4 +315,8 @@ class Cube(object):
         return status
 
     def isFirstLayerSolved(self, start_color):
-      return True
+      status = True
+      for i in range(0,9):
+        if self.face['front'][i] != start_color:
+          status = False
+      return status
