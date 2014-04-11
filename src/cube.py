@@ -216,6 +216,16 @@ class Cube(object):
             self.move('front','right')
             self.move('fromt','bright')
 
+        if direction == 'cw':
+            self.reorient('left')
+            self.reorient('down')
+            self.reorient('right')
+
+        if direction == 'ccw':
+            self.reorient('left')
+            self.reorient('up')
+            self.reorient('right')
+
     def print_cube(self):
         # top side
         print("   " + 
@@ -291,8 +301,15 @@ class Cube(object):
              self.face['back'][7] +
              self.face['back'][8] + "   ");
 
-    def solvedStatus(self):
-      return 100
-   
-    def isFirstLayerSolved(self, start_color):
-      return True
+    def solved_status(self):
+        status = 100.0
+        total_complete = 0
+        for face in ('front','top','bottom','left', 'right','back'):
+            color = self.face[face][4]
+            face_complete = 0
+            for i in range(0,9):
+               if self.face[face][i] == color:
+                    face_complete += 1
+            total_complete += face_complete
+        status = (total_complete / 54.0) * 100
+        return status

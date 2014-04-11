@@ -1107,7 +1107,38 @@ class TestCube(unittest.TestCase):
         
     def test_start_solved_status(self):
         myCube = cube.Cube()
-        self.assertEqual(myCube.solvedStatus(), 100)
+        self.assertEqual(myCube.solved_status(), 100)
+    
+    def test_start_rup_solved_status(self):
+        myCube = cube.Cube()
+        myCube.move('front', 'rup')
+        self.assertTrue(myCube.solved_status() < 78,
+            "Status = " + str(myCube.solved_status()))
+        self.assertTrue(myCube.solved_status() > 77,
+            "Status = " + str(myCube.solved_status()))
+
+    def test_start_reorient_cw(self):
+        myCube = cube.Cube()
+        myCube.reorient('cw')
+        for i in range(0,9):
+            self.assertEqual(myCube.face['front'][i], 'b')
+            self.assertEqual(myCube.face['top'][i], 'y')
+            self.assertEqual(myCube.face['left'][i], 'o')
+            self.assertEqual(myCube.face['bottom'][i], 'w')
+            self.assertEqual(myCube.face['right'][i], 'r')
+            self.assertEqual(myCube.face['back'][i], 'g')
+
+    def test_start_reorient_ccw(self):
+        myCube = cube.Cube()
+        myCube.reorient('ccw')
+        for i in range(0,9):
+            self.assertEqual(myCube.face['front'][i], 'b')
+            self.assertEqual(myCube.face['top'][i], 'w')
+            self.assertEqual(myCube.face['left'][i], 'r')
+            self.assertEqual(myCube.face['bottom'][i], 'y')
+            self.assertEqual(myCube.face['right'][i], 'o')
+            self.assertEqual(myCube.face['back'][i], 'g')
+
 
     def test_start_blue_face_solved(self):
         myCube = cube.Cube()
