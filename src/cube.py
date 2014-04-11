@@ -293,3 +293,6 @@ class Cube(object):
 
     def solvedStatus(self):
       return 100
+   
+    def isFirstLayerSolved(self, start_color):
+      return True
