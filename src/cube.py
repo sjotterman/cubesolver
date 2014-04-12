@@ -228,6 +228,7 @@ class Cube(object):
 
     def print_cube(self):
         # top side
+        print("\n\n***********************************")
         print("   " + 
              self.face['top'][0] +
              self.face['top'][1] +
@@ -300,6 +301,7 @@ class Cube(object):
              self.face['back'][6] +
              self.face['back'][7] +
              self.face['back'][8] + "   ");
+        print("***********************************\n\n")
 
     def solved_status(self):
         status = 100.0
