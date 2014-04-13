@@ -266,7 +266,7 @@ class Cube(object):
         print( 
              self.face['left'][6] +
              self.face['left'][7] +
-             self.face['left'][7] +
+             self.face['left'][8] +
              self.face['front'][6] +
              self.face['front'][7] +
              self.face['front'][8] +
