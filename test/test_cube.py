@@ -1221,6 +1221,24 @@ class TestCube(unittest.TestCase):
         myCube.move('front', 'rup')
         self.assertEqual(myCube.isFirstLayerSolved('b'), False)
 
+    def test_switch_blue_cubes_face_solved(self):
+        myCube = cube.Cube()
+
+        myCube.reorient('up')
+        myCube.move('front','down')
+        myCube.move('front','bright')
+        myCube.move('front','up')
+        myCube.reorient('left')
+        myCube.move('front','ccw')
+        myCube.move('front','left')
+        myCube.move('front','cw')
+        myCube.reorient('right')
+        myCube.move('front', 'left')
+        myCube.move('front','ccw')
+        myCube.move('middle', 'right')
+        myCube.move('front', 'cw')
+        self.assertEqual(myCube.isFirstLayerSolved('b'), False)
+
     def test_reorientup_down_bright(self):
         myCube = cube.Cube()
         myCube.reorient('up')
@@ -1286,6 +1304,7 @@ class TestCube(unittest.TestCase):
         self.assertEqual(myCube.face['back'][6], 'r')
         self.assertEqual(myCube.face['back'][7], 'g')
         self.assertEqual(myCube.face['back'][8], 'r')
+
 
 if __name__ == "__main__":
     unittest.main()

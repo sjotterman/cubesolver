@@ -331,4 +331,17 @@ class Cube(object):
       for i in range(0,9):
         if self.face[firstLayerFace][i] != start_color:
           status = False
+      left_face_color = self.face['left'][0]
+      front_face_color = self.face['front'][0]
+      right_face_color = self.face['right'][0]
+      back_face_color = self.face['back'][8]
+      for i in range(1,3):
+        if self.face['left'][i] != left_face_color:
+          status = False
+        if self.face['front'][i] != front_face_color:
+          status = False
+        if self.face['right'][i] != right_face_color:
+          status = False
+        if self.face['back'][8 - i] != back_face_color:
+          status = False
       return status
