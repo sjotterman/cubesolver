@@ -33,6 +33,12 @@ class Cube(object):
             self.move(face, 'up')
             return
 
+        if dir == 'left':
+            self.move(face, 'right')
+            self.move(face, 'right')
+            self.move(face, 'right')
+            return
+
         if dir == 'ldown':
             self.move(face, 'lup')
             self.move(face, 'lup')
@@ -228,6 +234,7 @@ class Cube(object):
 
     def print_cube(self):
         # top side
+        print("\n\n***********************************")
         print("   " + 
              self.face['top'][0] +
              self.face['top'][1] +
@@ -265,7 +272,7 @@ class Cube(object):
         print( 
              self.face['left'][6] +
              self.face['left'][7] +
-             self.face['left'][7] +
+             self.face['left'][8] +
              self.face['front'][6] +
              self.face['front'][7] +
              self.face['front'][8] +
@@ -300,6 +307,7 @@ class Cube(object):
              self.face['back'][6] +
              self.face['back'][7] +
              self.face['back'][8] + "   ");
+        print("***********************************\n\n")
 
     def solved_status(self):
         status = 100.0
@@ -322,5 +330,18 @@ class Cube(object):
           firstLayerFace = face
       for i in range(0,9):
         if self.face[firstLayerFace][i] != start_color:
+          status = False
+      left_face_color = self.face['left'][0]
+      front_face_color = self.face['front'][0]
+      right_face_color = self.face['right'][0]
+      back_face_color = self.face['back'][8]
+      for i in range(1,3):
+        if self.face['left'][i] != left_face_color:
+          status = False
+        if self.face['front'][i] != front_face_color:
+          status = False
+        if self.face['right'][i] != right_face_color:
+          status = False
+        if self.face['back'][8 - i] != back_face_color:
           status = False
       return status
