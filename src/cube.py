@@ -345,3 +345,7 @@ class Cube(object):
         if self.face['back'][8 - i] != back_face_color:
           status = False
       return status
+
+    def isSecondLayerSolved(self, start_color):
+        status = True
+        return status
