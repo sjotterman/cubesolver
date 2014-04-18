@@ -350,15 +350,17 @@ class Cube(object):
         status = True
         if self.face['front'][4] == 'b':
             self.reorient("up")
+        left_face_color = self.face['left'][4]
+        front_face_color = self.face['front'][4]
+        right_face_color = self.face['right'][4]
+        back_face_color = self.face['back'][4]
         for i in range(3,6):
-            if self.face['left'][i] != 'y':
+            if self.face['left'][i] != left_face_color:
                 status = False
-            if self.face['front'][i] != 'o':
+            if self.face['front'][i] != front_face_color:
                 status = False
-            if self.face['right'][i] != 'w':
+            if self.face['right'][i] != right_face_color:
                 status = False
-            if self.face['back'][8 - i] != 'r':
+            if self.face['back'][8 - i] != back_face_color:
                 status = False
-        if self.face['front'][4] == 'b':
-            self.reorient('down')
         return status

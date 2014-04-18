@@ -1236,6 +1236,13 @@ class TestCube(unittest.TestCase):
         myCube.move('front','rup')
         self.assertEqual(myCube.isSecondLayerSolved('b'), False)
 
+    def test_start_rotate_second_layer_solved(self):
+        myCube = cube.Cube()
+        myCube.reorient("left")
+        myCube.move("front", "up")
+        myCube.reorient("right")
+        self.assertEqual(myCube.isSecondLayerSolved('b'), True)
+
     def test_start_front_rup_blue_face_solved(self):
         myCube = cube.Cube()
         myCube.move('front', 'rup')
