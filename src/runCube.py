@@ -5,12 +5,14 @@ import cube
 def main():
    testCube = cube.Cube()
    testCube.print_cube()
-   print("Reorient up")
-   testCube.reorient("up")
+   print("Reorient left")
+   testCube.reorient("left")
+   print("front up")
+   testCube.move("front","up")
+   print("Reorient right")
+   testCube.reorient("right")
    testCube.print_cube()
    
-
-print
 
 
 if __name__ == "__main__":
