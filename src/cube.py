@@ -358,5 +358,5 @@ class Cube(object):
                 status = False
             if self.face['back'][8 - i] != 'r':
                 status = False
-
+        self.reorient('down')
         return status
