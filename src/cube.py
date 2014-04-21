@@ -355,7 +355,11 @@ class Cube(object):
         count += 1
       while self.face['front'][4] != start_front:
           self.reorient('left')
-            
+
+      return status
+
+    def isThirdLayerSolved(self, start_color):
+      status = True
       return status
 
     def isSecondLayerSolved(self, start_color):

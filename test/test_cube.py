@@ -1266,6 +1266,15 @@ class TestCube(unittest.TestCase):
         myCube.move('front', 'cw')
         self.assertEqual(myCube.isFirstLayerSolved('b'), False)
 
+    def test_start_front_rup_blue_third_layer_solved(self):
+        myCube = cube.Cube()
+        self.assertEqual(myCube.isThirdLayerSolved('b'), True)
+        self.assertEqual(myCube.isThirdLayerSolved('r'), True)
+        self.assertEqual(myCube.isThirdLayerSolved('g'), True)
+        self.assertEqual(myCube.isThirdLayerSolved('w'), True)
+        self.assertEqual(myCube.isThirdLayerSolved('o'), True)
+        self.assertEqual(myCube.isThirdLayerSolved('y'), True)
+
     def test_reorientup_down_bright(self):
         myCube = cube.Cube()
         myCube.reorient('up')
