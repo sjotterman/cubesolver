@@ -348,8 +348,14 @@ class Cube(object):
 
     def isSecondLayerSolved(self, start_color):
         status = True
-        if self.face['front'][4] == 'b':
-            self.reorient("up")
+        start_front = self.face['front'][4]
+        start_top = self.face['top'][4]
+        count = 0
+        while self.face['top'][4] != start_color:
+          if count % 4 == 0:
+            self.reorient('up')
+          else:
+            self.reorient('left')
         left_face_color = self.face['left'][4]
         front_face_color = self.face['front'][4]
         right_face_color = self.face['right'][4]
