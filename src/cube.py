@@ -360,6 +360,38 @@ class Cube(object):
 
     def isThirdLayerSolved(self, start_color):
       status = True
+      firstLayerFace = 'front'
+      start_front = self.face['front'][4]
+      start_top = self.face['top'][4]
+      count = 0
+      while self.face['top'][4] != start_color:
+        if count == 4:
+          self.reorient('left')
+        else:
+          self.reorient('up')
+        count += 1
+      left_face_color = self.face['left'][6]
+      front_face_color = self.face['front'][6]
+      right_face_color = self.face['right'][6]
+      back_face_color = self.face['back'][0]
+      for i in range(7,9):
+        if self.face['left'][i] != left_face_color:
+          status = False
+        if self.face['front'][i] != front_face_color:
+          status = False
+        if self.face['right'][i] != right_face_color:
+          status = False
+        if self.face['back'][8 - i] != back_face_color:
+          status = False
+      while self.face['top'][4] != start_top:
+        if count == 4:
+          self.reorient('left')
+        else:
+          self.reorient('up')
+        count += 1
+      while self.face['front'][4] != start_front:
+          self.reorient('left')
+
       return status
 
     def isSecondLayerSolved(self, start_color):
