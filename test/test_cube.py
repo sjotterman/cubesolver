@@ -1352,6 +1352,26 @@ class TestCube(unittest.TestCase):
             self.assertEqual(cube1.face['left'][i], cube2.face['left'][i])
             self.assertEqual(cube1.face['right'][i], cube2.face['right'][i])
 
+    def test_isFirstLayerSolved_idempodent(self):
+        cube1 = cube.Cube()
+        cube2 = cube.Cube()
+        status = cube2.isFirstLayerSolved('y')
+        for i in range(0,9):
+            self.assertEqual(cube1.face['front'][i], cube2.face['front'][i])
+            self.assertEqual(cube1.face['top'][i], cube2.face['top'][i])
+            self.assertEqual(cube1.face['back'][i], cube2.face['back'][i])
+            self.assertEqual(cube1.face['bottom'][i], cube2.face['bottom'][i])
+            self.assertEqual(cube1.face['left'][i], cube2.face['left'][i])
+            self.assertEqual(cube1.face['right'][i], cube2.face['right'][i])
+        status = cube2.isFirstLayerSolved('g')
+        for i in range(0,9):
+            self.assertEqual(cube1.face['front'][i], cube2.face['front'][i])
+            self.assertEqual(cube1.face['top'][i], cube2.face['top'][i])
+            self.assertEqual(cube1.face['back'][i], cube2.face['back'][i])
+            self.assertEqual(cube1.face['bottom'][i], cube2.face['bottom'][i])
+            self.assertEqual(cube1.face['left'][i], cube2.face['left'][i])
+            self.assertEqual(cube1.face['right'][i], cube2.face['right'][i])
+
 if __name__ == "__main__":
     unittest.main()
 
