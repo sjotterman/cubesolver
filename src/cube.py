@@ -325,12 +325,15 @@ class Cube(object):
     def isFirstLayerSolved(self, start_color):
       status = True
       firstLayerFace = 'front'
-      for face in ('front','top','bottom','left', 'right','back'):
-        if self.face[face][4] == start_color:
-          firstLayerFace = face
-      for i in range(0,9):
-        if self.face[firstLayerFace][i] != start_color:
-          status = False
+      start_front = self.face['front'][4]
+      start_top = self.face['top'][4]
+      count = 0
+      while self.face['top'][4] != start_color:
+        if count == 4:
+          self.reorient('left')
+        else:
+          self.reorient('up')
+      count += 1
       left_face_color = self.face['left'][0]
       front_face_color = self.face['front'][0]
       right_face_color = self.face['right'][0]
