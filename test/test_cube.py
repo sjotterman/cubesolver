@@ -1271,6 +1271,35 @@ class TestCube(unittest.TestCase):
         myCube.move('front', 'cw')
         self.assertEqual(myCube.isFirstLayerSolved('b'), False)
 
+    def test_start_blue_third_layer_solved(self):
+        myCube = cube.Cube()
+        self.assertEqual(myCube.isThirdLayerSolved('b'), True)
+        self.assertEqual(myCube.isThirdLayerSolved('r'), True)
+        self.assertEqual(myCube.isThirdLayerSolved('g'), True)
+        self.assertEqual(myCube.isThirdLayerSolved('w'), True)
+        self.assertEqual(myCube.isThirdLayerSolved('o'), True)
+        self.assertEqual(myCube.isThirdLayerSolved('y'), True)
+
+    def test_start_front_rup_third_layer_solved(self):
+        myCube = cube.Cube()
+        myCube.move('front','rup')
+        self.assertEqual(myCube.isThirdLayerSolved('b'), False)
+        self.assertEqual(myCube.isThirdLayerSolved('r'), False)
+        self.assertEqual(myCube.isThirdLayerSolved('g'), False)
+        self.assertEqual(myCube.isThirdLayerSolved('w'), True)
+        self.assertEqual(myCube.isThirdLayerSolved('o'), False)
+        self.assertEqual(myCube.isThirdLayerSolved('y'), True)
+
+    def test_start_front_tright_third_layer_solved(self):
+        myCube = cube.Cube()
+        myCube.move('front','tright')
+        self.assertEqual(myCube.isThirdLayerSolved('b'), False)
+        self.assertEqual(myCube.isThirdLayerSolved('r'), True)
+        self.assertEqual(myCube.isThirdLayerSolved('g'), False)
+        self.assertEqual(myCube.isThirdLayerSolved('w'), False)
+        self.assertEqual(myCube.isThirdLayerSolved('o'), True)
+        self.assertEqual(myCube.isThirdLayerSolved('y'), False)
+
     def test_reorientup_down_bright(self):
         myCube = cube.Cube()
         myCube.reorient('up')
@@ -1337,6 +1366,65 @@ class TestCube(unittest.TestCase):
         self.assertEqual(myCube.face['back'][7], 'g')
         self.assertEqual(myCube.face['back'][8], 'r')
 
+    def test_isSecondLayerSolved_idempodent(self):
+        cube1 = cube.Cube()
+        cube2 = cube.Cube()
+        status = cube2.isSecondLayerSolved('y')
+        for i in range(0,9):
+            self.assertEqual(cube1.face['front'][i], cube2.face['front'][i])
+            self.assertEqual(cube1.face['top'][i], cube2.face['top'][i])
+            self.assertEqual(cube1.face['back'][i], cube2.face['back'][i])
+            self.assertEqual(cube1.face['bottom'][i], cube2.face['bottom'][i])
+            self.assertEqual(cube1.face['left'][i], cube2.face['left'][i])
+            self.assertEqual(cube1.face['right'][i], cube2.face['right'][i])
+        status = cube2.isSecondLayerSolved('g')
+        for i in range(0,9):
+            self.assertEqual(cube1.face['front'][i], cube2.face['front'][i])
+            self.assertEqual(cube1.face['top'][i], cube2.face['top'][i])
+            self.assertEqual(cube1.face['back'][i], cube2.face['back'][i])
+            self.assertEqual(cube1.face['bottom'][i], cube2.face['bottom'][i])
+            self.assertEqual(cube1.face['left'][i], cube2.face['left'][i])
+            self.assertEqual(cube1.face['right'][i], cube2.face['right'][i])
+
+    def test_isFirstLayerSolved_idempodent(self):
+        cube1 = cube.Cube()
+        cube2 = cube.Cube()
+        status = cube2.isFirstLayerSolved('y')
+        for i in range(0,9):
+            self.assertEqual(cube1.face['front'][i], cube2.face['front'][i])
+            self.assertEqual(cube1.face['top'][i], cube2.face['top'][i])
+            self.assertEqual(cube1.face['back'][i], cube2.face['back'][i])
+            self.assertEqual(cube1.face['bottom'][i], cube2.face['bottom'][i])
+            self.assertEqual(cube1.face['left'][i], cube2.face['left'][i])
+            self.assertEqual(cube1.face['right'][i], cube2.face['right'][i])
+        status = cube2.isFirstLayerSolved('g')
+        for i in range(0,9):
+            self.assertEqual(cube1.face['front'][i], cube2.face['front'][i])
+            self.assertEqual(cube1.face['top'][i], cube2.face['top'][i])
+            self.assertEqual(cube1.face['back'][i], cube2.face['back'][i])
+            self.assertEqual(cube1.face['bottom'][i], cube2.face['bottom'][i])
+            self.assertEqual(cube1.face['left'][i], cube2.face['left'][i])
+            self.assertEqual(cube1.face['right'][i], cube2.face['right'][i])
+
+    def test_isThirdLayerSolved_idempodent(self):
+        cube1 = cube.Cube()
+        cube2 = cube.Cube()
+        status = cube2.isThirdLayerSolved('y')
+        for i in range(0,9):
+            self.assertEqual(cube1.face['front'][i], cube2.face['front'][i])
+            self.assertEqual(cube1.face['top'][i], cube2.face['top'][i])
+            self.assertEqual(cube1.face['back'][i], cube2.face['back'][i])
+            self.assertEqual(cube1.face['bottom'][i], cube2.face['bottom'][i])
+            self.assertEqual(cube1.face['left'][i], cube2.face['left'][i])
+            self.assertEqual(cube1.face['right'][i], cube2.face['right'][i])
+        status = cube2.isThirdLayerSolved('g')
+        for i in range(0,9):
+            self.assertEqual(cube1.face['front'][i], cube2.face['front'][i])
+            self.assertEqual(cube1.face['top'][i], cube2.face['top'][i])
+            self.assertEqual(cube1.face['back'][i], cube2.face['back'][i])
+            self.assertEqual(cube1.face['bottom'][i], cube2.face['bottom'][i])
+            self.assertEqual(cube1.face['left'][i], cube2.face['left'][i])
+            self.assertEqual(cube1.face['right'][i], cube2.face['right'][i])
 
 if __name__ == "__main__":
     unittest.main()
