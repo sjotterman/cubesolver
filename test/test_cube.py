@@ -2,6 +2,7 @@
 
 import unittest
 from ..src import cube
+from ..src import solver
 
 class TestCube(unittest.TestCase):
     def test_blue_start(self):
@@ -1425,6 +1426,9 @@ class TestCube(unittest.TestCase):
             self.assertEqual(cube1.face['bottom'][i], cube2.face['bottom'][i])
             self.assertEqual(cube1.face['left'][i], cube2.face['left'][i])
             self.assertEqual(cube1.face['right'][i], cube2.face['right'][i])
+
+    def test_createSolver(self):
+      mySolver = solver.Solver()
 
 if __name__ == "__main__":
     unittest.main()
