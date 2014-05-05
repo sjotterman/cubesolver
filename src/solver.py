@@ -7,6 +7,10 @@ class Solver(object):
     def __init__(self):
         pass
 
-    def solve(target):
+    def solve(self, target):
+        target.move('front', 'rdown')
+        target.move('front', 'bright')
+        target.move('front', 'rup')
+
         return True
     
