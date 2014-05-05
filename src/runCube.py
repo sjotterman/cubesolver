@@ -3,18 +3,14 @@
 import cube
 
 def main():
-   testCube = cube.Cube()
-   testCube.print_cube()
-   count = 0
-   while testCube.face['top'][4] != 'w' and count < 14: 
-     if count == 4:
-      testCube.reorient('up')
-      testCube.print_cube()
-     else:
-      testCube.reorient('left')
-      testCube.print_cube()
-     count += 1
-
+   myCube = cube.Cube()
+   myCube.print_cube()
+   myCube.move('front', 'rdown')
+   myCube.print_cube()
+   myCube.move('front', 'bleft')
+   myCube.print_cube()
+   myCube.move('front', 'rup')
+   myCube.print_cube()
 
 
 if __name__ == "__main__":
