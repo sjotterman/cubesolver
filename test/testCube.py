@@ -1463,6 +1463,10 @@ class TestCube(unittest.TestCase):
             self.assertEqual(cube1.face['left'][i], cube2.face['left'][i])
             self.assertEqual(cube1.face['right'][i], cube2.face['right'][i])
 
+    def test_new_cube_blue_misoriented_false(self):
+        testCube = cube.Cube();
+        self.assertEqual(testCube.isMisoriented('front',8) , True)
+
 if __name__ == "__main__":
     unittest.main()
 

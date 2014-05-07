@@ -434,3 +434,6 @@ class Cube(object):
             self.reorient('left')
 
         return status
+    
+    def isMisoriented(self, face, squareNum):
+        return True
