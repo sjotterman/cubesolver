@@ -16,6 +16,11 @@ class Solver(object):
             target.move('front', 'rdown')
             return True
 
+        if (target.face['top'][4] == 'w'):
+            target.reorient('left')
+            target.move('front', 'down')
+            target.reorient('right')
+            return True
         target.move('front', 'rdown')
         target.move('front', 'bright')
         target.move('front', 'rup')
