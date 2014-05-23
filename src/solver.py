@@ -8,6 +8,10 @@ class Solver(object):
         pass
 
     def solve(self, target):
+        if (target.face['top'][2] == 'g'):
+            target.move('front', 'rup')
+            return True
+
         target.move('front', 'rdown')
         target.move('front', 'bright')
         target.move('front', 'rup')
