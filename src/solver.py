@@ -12,6 +12,10 @@ class Solver(object):
             target.move('front', 'rup')
             return True
 
+        if (target.face['top'][2] == 'b'):
+            target.move('front', 'rdown')
+            return True
+
         target.move('front', 'rdown')
         target.move('front', 'bright')
         target.move('front', 'rup')

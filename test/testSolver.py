@@ -35,6 +35,15 @@ class TestSolver(unittest.TestCase):
         self.assertEqual(myCube.isFirstLayerSolved('r'), False)
         self.assertEqual(mySolver.solve(myCube), True)
         self.assertEqual(myCube.isFirstLayerSolved('r'), True)
+    
+    def testSolveThreeRedCubes(self):
+        myCube = cube.Cube()
+        mySolver = solver.Solver()
+        self.assertEqual(myCube.isFirstLayerSolved('r'), True)
+        myCube.move('front', 'rup')
+        self.assertEqual(myCube.isFirstLayerSolved('r'), False)
+        self.assertEqual(mySolver.solve(myCube), True)
+        self.assertEqual(myCube.isFirstLayerSolved('r'), True)
 
         
 
