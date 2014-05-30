@@ -24,14 +24,16 @@ class Solver(object):
                 
                 # front bottom left square needs to go to top 
                 if target.face['front'][6] == topColor:
-                    if (target.face['left'][8] == leftColor) and (target.face['bottom'][0] == frontColor):
+                    if (target.face['left'][8] == leftColor) \
+                        and (target.face['bottom'][0] == frontColor):
                         target.move('front', 'bright')
                         target.move('front', 'ldown')
                         target.move('front', 'bleft')
                         target.move('front', 'lup')
                 # front bottom right square needs to go to top 
                 elif target.face['front'][8] == topColor:
-                    if (target.face['right'][6] == rightColor) and (target.face['bottom'][2] == frontColor):
+                    if (target.face['right'][6] == rightColor) \
+                        and (target.face['bottom'][2] == frontColor):
                         target.move('front', 'bleft')
                         target.move('front', 'rdown')
                         target.move('front', 'bright')
@@ -47,7 +49,8 @@ class Solver(object):
                             
                 # bottom top left square needs to go to top 
                 elif target.face['bottom'][0] == topColor:
-                    if (target.face['left'][8] == frontColor) and (target.face['front'][6] == leftColor):
+                    if (target.face['left'][8] == frontColor) \
+                        and (target.face['front'][6] == leftColor):
                         target.move('front', 'ldown')
                         target.move('front', 'bright')
                         target.move('front', 'bright')
@@ -70,7 +73,8 @@ class Solver(object):
 
                 # bottom top right square needs to go to top 
                 elif target.face['bottom'][2] == topColor:
-                    if (target.face['right'][6] == frontColor) and (target.face['front'][8] == rightColor):
+                    if (target.face['right'][6] == frontColor) \
+                        and (target.face['front'][8] == rightColor):
                         target.move('front', 'rdown')
                         target.move('front', 'bleft')
                         target.move('front', 'bleft')
@@ -93,7 +97,8 @@ class Solver(object):
                     target.move('front', 'bright')
                     target.move('front', 'lup')
                 # top face square is not in right position
-                elif target.face['front'][1] == topColor and target.face['top'][7] == frontColor:
+                elif target.face['front'][1] == topColor  \
+                    and target.face['top'][7] == frontColor:
                     target.move('front', 'ccw')
                     target.move('front', 'right')
                     target.move('front', 'right')
@@ -104,7 +109,8 @@ class Solver(object):
                 # this will need to be refactored
                 else:
                     if target.face['top'][6] == topColor:
-                        if target.face['front'][0] != frontColor or target.face['left'][2] != leftColor:
+                        if target.face['front'][0] != frontColor \
+                            or target.face['left'][2] != leftColor:
                             target.move('front','ldown')
                             target.move('front', 'bright')
                             target.move('front', 'lup')
@@ -114,19 +120,22 @@ class Solver(object):
                             target.move('front', 'bright')
                             target.move('front', 'up')
                     if target.face['top'][8] == topColor:
-                        if target.face['front'][2] != frontColor or target.face['right'][0] != rightColor:
+                        if target.face['front'][2] != frontColor \
+                            or target.face['right'][0] != rightColor:
                             target.move('front','rdown')
                             target.move('front', 'bleft')
                             target.move('front', 'rup')
 
             for j in range(0, 4):
-                if target.face['front'][3] == topColor and target.face['left'][5] == target.face['front'][0]:
+                if target.face['front'][3] == topColor \
+                    and target.face['left'][5] == target.face['front'][0]:
                     target.move('front', 'right')
                     target.move('front', 'right')
                     target.move('front', 'cw')
                     target.move('front', 'left')
                     target.move('front', 'ccw')
-                elif target.face['front'][5] == topColor and target.face['right'][3] == target.face['front'][0]:
+                elif target.face['front'][5] == topColor \
+                and target.face['right'][3] == target.face['front'][0]:
                     target.move('front', 'right')
                     target.move('front', 'ccw')
                     target.move('front', 'left')
