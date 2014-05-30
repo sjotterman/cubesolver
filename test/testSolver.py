@@ -73,8 +73,10 @@ class TestSolver(unittest.TestCase):
         myCube.move('front', 'up')
         myCube.reorient('right')
         self.assertEqual(myCube.isFirstLayerSolved('r'), False)
+        myCube.print_cube()
         self.assertEqual(mySolver.solve(myCube), True)
-        self.assertEqual(myCube.isFirstLayerSolved('r'), True)
+        myCube.print_cube()
+        self.assertEqual(myCube.isFirstLayerSolved('w'), True)
 
         
 
