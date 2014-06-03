@@ -78,6 +78,31 @@ class TestSolver(unittest.TestCase):
         myCube.print_cube()
         self.assertEqual(myCube.isFirstLayerSolved('w'), True)
 
+    def testSolveDoesNotReorient1(self):
+        myCube = cube.Cube()
+        mySolver = solver.Solver()
+        myCube.reorient('left')
+        myCube.move('front', 'up')
+        myCube.reorient('right')
+        originalTopColor = myCube.face['top'][4]
+        originalFrontColor = myCube.face['front'][4]
+        self.assertEqual(mySolver.solve(myCube), True)
+        self.assertEqual(originalTopColor, myCube.face['top'][4])
+        self.assertEqual(originalFrontColor, myCube.face['front'][4])
+    
+    def testSolveDoesNotReorient2(self):
+        myCube = cube.Cube()
+        mySolver = solver.Solver()
+        myCube.move('front', 'up')
+        myCube.move('front', 'right')
+        originalTopColor = myCube.face['top'][4]
+        originalFrontColor = myCube.face['front'][4]
+        self.assertEqual(mySolver.solve(myCube), True)
+        self.assertEqual(originalTopColor, myCube.face['top'][4])
+        self.assertEqual(originalFrontColor, myCube.face['front'][4])
+    
+
+
         
 
           

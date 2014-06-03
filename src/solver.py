@@ -9,8 +9,10 @@ class Solver(object):
 
     def solve(self, target):
         topColor = target.face['top'][4]
+        startTopColor = topColor
         rightColor = target.face['right'][4]
         frontColor = target.face['front'][4]
+        startFrontColor = frontColor
         leftColor = target.face['left'][4]
         backColor = target.face['back'][4]
         loopCounter = 0
@@ -162,6 +164,21 @@ class Solver(object):
                 print ("Loop Counter exceeded 4000.")
                 target.print_cube()
                 return False
-
+        
+        count = 0
+        print("solved, reorienting")
+        print(target.face['top'][4])
+        print(startTopColor)
+        while target.face['top'][4] != startTopColor:
+            print("not equal")
+            if count == 4:
+                target.reorient('left')
+                print("reorient left")
+            else:
+                target.reorient('up')
+                print("reorient up")
+            count += 1
+        while target.face['front'][4] != startFrontColor:
+            target.reorient('left')
         return True
     
