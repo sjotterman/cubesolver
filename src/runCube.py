@@ -1,16 +1,23 @@
 # runCube.py
 
 import cube
+import solver
 
 def main():
-   myCube = cube.Cube()
-   myCube.print_cube()
-   myCube.move('front', 'rdown')
-   myCube.print_cube()
-   myCube.move('front', 'bleft')
-   myCube.print_cube()
-   myCube.move('front', 'rup')
-   myCube.print_cube()
+    myCube = cube.Cube()
+    mySolver = solver.Solver()
+    myCube.print_cube()
+    myCube.move('front', 'up')
+    myCube.move('front', 'up')
+    myCube.move('front', 'right')
+    myCube.move('front', 'right')
+    myCube.reorient('right')
+    myCube.move('front', 'up')
+    myCube.move('front', 'up')
+    myCube.print_cube()
+
+    mySolver.solve(myCube)
+    myCube.print_cube()
 
 
 if __name__ == "__main__":

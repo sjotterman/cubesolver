@@ -101,7 +101,22 @@ class TestSolver(unittest.TestCase):
         self.assertEqual(originalTopColor, myCube.face['top'][4])
         self.assertEqual(originalFrontColor, myCube.face['front'][4])
     
+    def testSolveSwitchedCenters(self):
+        myCube = cube.Cube()
+        mySolver = solver.Solver()
+        self.assertEqual(myCube.isFirstLayerSolved('r'), True)
+        
+        myCube.move('front', 'up')
+        myCube.move('front', 'up')
+        myCube.move('front', 'right')
+        myCube.move('front', 'right')
+        myCube.reorient('right')
+        myCube.move('front', 'up')
+        myCube.move('front', 'up')
 
+        self.assertEqual(myCube.isFirstLayerSolved('r'), False)
+        self.assertEqual(mySolver.solve(myCube), True)
+        self.assertEqual(myCube.isFirstLayerSolved('r'), True)
 
         
 
