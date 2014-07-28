@@ -350,6 +350,9 @@ class Cube(object):
       front_face_color = self.face['front'][0]
       right_face_color = self.face['right'][0]
       back_face_color = self.face['back'][8]
+      for i in range(0,9):
+        if self.face['top'][i] != start_color:
+            status = False
       for i in range(1,3):
         if self.face['left'][i] != left_face_color:
           status = False
