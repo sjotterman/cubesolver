@@ -61,7 +61,7 @@ class Solver(object):
 
                 # bottom top middle square needs to go to top 
                 elif target.face['bottom'][1] == topColor:
-                    if target.face['front'][6] == frontColor:
+                    if target.face['front'][7] == frontColor:
                         target.move('front', 'ccw')
                         target.move('front', 'right')
                         target.move('front', 'ccw')
