@@ -17,11 +17,7 @@ class Solver(object):
         backColor = target.face['back'][4]
         loopCounter = 0
         while target.isFirstLayerSolved(topColor) == False:
-            #print("beginning of while loop")
             for i in range(0,4):
-                #print("i = " + str(i))
-                #target.print_cube()
-                #print("Front bleft")
                 target.move('front', 'bleft')
                 
                 # front bottom left square needs to go to top 
