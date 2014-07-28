@@ -73,9 +73,7 @@ class TestSolver(unittest.TestCase):
         myCube.move('front', 'up')
         myCube.reorient('right')
         self.assertEqual(myCube.isFirstLayerSolved('r'), False)
-        myCube.print_cube()
         self.assertEqual(mySolver.solve(myCube), True)
-        myCube.print_cube()
         self.assertEqual(myCube.isFirstLayerSolved('w'), True)
 
     def testSolveDoesNotReorient1(self):
@@ -119,6 +117,22 @@ class TestSolver(unittest.TestCase):
         self.assertEqual(myCube.isFirstLayerSolved('r'), True)
 
         
+    def testSolveMiddleCubes(self):
+        myCube = cube.Cube()
+        mySolver = solver.Solver()
+        self.assertEqual(myCube.isSecondLayerSolved('r'), True)
+        
+        myCube.move('front', 'up')
+        myCube.move('front', 'up')
+        myCube.move('front', 'right')
+        myCube.move('front', 'right')
+        myCube.reorient('right')
+        myCube.move('front', 'up')
+        myCube.move('front', 'up')
+
+        self.assertEqual(myCube.isSecondLayerSolved('r'), False)
+        self.assertEqual(mySolver.solve(myCube), True)
+        self.assertEqual(myCube.isSecondLayerSolved('r'), True)
 
           
 

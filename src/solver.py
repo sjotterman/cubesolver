@@ -154,17 +154,98 @@ class Solver(object):
             backColor = target.face['back'][4]
             loopCounter += 1
 
+
             if loopCounter == 4000:
-                print ("Loop Counter exceeded 4000.")
+                print ("First layer Loop Counter exceeded max.")
+                return False
+
+        loopCounter = 0
+        count = 0
+        if target.isFirstLayerSolved(topColor) == True:
+            print(topColor + " side is solved")
+
+        while target.face['bottom'][4] != startTopColor:
+            if count == 4:
+                target.reorient('left')
+            else:
+                target.reorient('up')
+            count += 1
+
+        while target.face['front'][7] != target.face['front'][4]:
+            target.move('front', 'left')
+
+
+        while target.isSecondLayerSolved(target.face['bottom'][4]) == False:
+            centerColor = target.face['front'][4]
+
+            # front top cube needs to move
+            if target.face['front'][1] == centerColor:
+                # move to front 5
+                if target.face['top'][7] == target.face['right'][4]:
+                    target.move('front', 'tleft')
+                    target.move('front', 'rup')
+                    target.move('front', 'tright')
+                    target.move('front', 'rdown')
+                    target.move('front', 'tright')
+                    target.move('front', 'ccw')
+                    target.move('front', 'tleft')
+                    target.move('front', 'cw')
+                    
+                # move to front 3
+                elif target.face['top'][7] == target.face['left'][4]:
+                    target.move('front', 'tright')
+                    target.move('front', 'lup')
+                    target.move('front', 'tleft')
+                    target.move('front', 'ldown')
+                    target.move('front', 'tleft')
+                    target.move('front', 'cw')
+                    target.move('front', 'tright')
+                    target.move('front', 'ccw')
+
+
+
+            if loopCounter % 4 == 0:
+                if target.face['front'][3] != target.face['top'][4]:
+                    if target.face['left'][5] != target.face['top'][4]:
+                        target.move('front', 'lup')
+                        target.move('front', 'tleft')
+                        target.move('front', 'ldown')
+                        target.move('front', 'tleft')
+                        target.move('front', 'cw')
+                        target.move('front', 'tright')
+                        target.move('front', 'ccw')
+                        loopCounter -= 1
+
+                elif target.face['front'][5] != target.face['top'][4]:
+                    if target.face['right'][3] != target.face['top'][4]:
+                        target.move('front', 'rup')
+                        target.move('front', 'tright')
+                        target.move('front', 'rdown')
+                        target.move('front', 'tright')
+                        target.move('front', 'ccw')
+                        target.move('front', 'tleft')
+                        target.move('front', 'cw')
+                        loopCounter -= 1
+
+            if loopCounter % 4 == 0:
+                target.reorient('left')
+            else:
+                target.move('top', 'left')
+
+            loopCounter += 1
+
+
+
+            if loopCounter == 4000:
+                print ("Second Layer Loop Counter exceeded max.")
                 target.print_cube()
                 return False
-        
+
         count = 0
         print("solved, reorienting")
         print(target.face['top'][4])
         print(startTopColor)
         while target.face['top'][4] != startTopColor:
-            print("not equal")
             if count == 4:
                 target.reorient('left')
                 print("reorient left")
