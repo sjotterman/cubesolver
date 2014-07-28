@@ -147,8 +147,6 @@ class Solver(object):
 
 
             target.reorient('left')
-            #target.print_cube()
-            #print("Reorient left")
             topColor = target.face['top'][4]
             rightColor = target.face['right'][4]
             frontColor = target.face['front'][4]
