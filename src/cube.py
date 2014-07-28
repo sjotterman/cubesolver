@@ -45,6 +45,12 @@ class Cube(object):
             self.move(face, 'bright')
             return
 
+        if dir == 'tleft':
+            self.move(face, 'tright')
+            self.move(face, 'tright')
+            self.move(face, 'tright')
+            return
+
         if dir == 'ldown':
             self.move(face, 'lup')
             self.move(face, 'lup')
