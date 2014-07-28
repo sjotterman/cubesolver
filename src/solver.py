@@ -161,8 +161,6 @@ class Solver(object):
 
         loopCounter = 0
         count = 0
-        if target.isFirstLayerSolved(topColor) == True:
-            print(topColor + " side is solved")
 
         while target.face['bottom'][4] != startTopColor:
             if count == 4:
@@ -242,16 +240,11 @@ class Solver(object):
                 return False
 
         count = 0
-        print("solved, reorienting")
-        print(target.face['top'][4])
-        print(startTopColor)
         while target.face['top'][4] != startTopColor:
             if count == 4:
                 target.reorient('left')
-                print("reorient left")
             else:
                 target.reorient('up')
-                print("reorient up")
             count += 1
         while target.face['front'][4] != startFrontColor:
             target.reorient('left')
