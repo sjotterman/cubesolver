@@ -1208,9 +1208,9 @@ class TestCube(unittest.TestCase):
         myCube = cube.Cube()
         myCube.move('front', 'rup')
         self.assertTrue(myCube.solved_status() < 78,
-            "Status = " + str(myCube.solved_status()))
+                        "Status = " + str(myCube.solved_status()))
         self.assertTrue(myCube.solved_status() > 77,
-            "Status = " + str(myCube.solved_status()))
+                        "Status = " + str(myCube.solved_status()))
 
     def test_start_reorient_cw(self):
         myCube = cube.Cube()
@@ -1532,7 +1532,7 @@ class TestCube(unittest.TestCase):
             self.assertEqual(cube1.face['right'][i], cube2.face['right'][i])
 
     def test_new_cube_blue_misoriented_false(self):
-        testCube = cube.Cube();
+        testCube = cube.Cube()
         self.assertEqual(testCube.isMisoriented('front', 8), True)
 
 if __name__ == "__main__":
