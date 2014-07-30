@@ -1475,6 +1475,7 @@ class TestCube(unittest.TestCase):
         cube1 = cube.Cube()
         cube2 = cube.Cube()
         status = cube2.isSecondLayerSolved('y')
+        self.assertTrue(status)
         for i in range(0, 9):
             self.assertEqual(cube1.face['front'][i], cube2.face['front'][i])
             self.assertEqual(cube1.face['top'][i], cube2.face['top'][i])
@@ -1503,6 +1504,7 @@ class TestCube(unittest.TestCase):
             self.assertEqual(cube1.face['left'][i], cube2.face['left'][i])
             self.assertEqual(cube1.face['right'][i], cube2.face['right'][i])
         status = cube2.isFirstLayerSolved('g')
+        self.assertTrue(status)
         for i in range(0, 9):
             self.assertEqual(cube1.face['front'][i], cube2.face['front'][i])
             self.assertEqual(cube1.face['top'][i], cube2.face['top'][i])
@@ -1515,6 +1517,7 @@ class TestCube(unittest.TestCase):
         cube1 = cube.Cube()
         cube2 = cube.Cube()
         status = cube2.isThirdLayerSolved('y')
+        self.assertTrue(status)
         for i in range(0, 9):
             self.assertEqual(cube1.face['front'][i], cube2.face['front'][i])
             self.assertEqual(cube1.face['top'][i], cube2.face['top'][i])
