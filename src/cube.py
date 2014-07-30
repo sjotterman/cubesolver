@@ -148,7 +148,7 @@ class Cube(object):
             pos1 = 2
             pos2 = 5
             pos3 = 8
-            
+
         temp_square1 = self.face['front'][pos1]
         temp_square2 = self.face['front'][pos2]
         temp_square3 = self.face['front'][pos3]
@@ -211,14 +211,13 @@ class Cube(object):
         self.face['left'][pos2] = temp_square2
         self.face['left'][pos3] = temp_square3
 
-        
     def reorient(self, direction):
         if direction == 'down':
             self.reorient('up')
             self.reorient('up')
             self.reorient('up')
             return
-        
+
         if direction == 'left':
             self.reorient('right')
             self.reorient('right')
@@ -248,88 +247,85 @@ class Cube(object):
     def print_cube(self):
         # top side
         print("\n\n***********************************")
-        print("   " + 
-             self.face['top'][0] +
-             self.face['top'][1] +
-             self.face['top'][2] + "   ");
-        print("   " + 
-             self.face['top'][3] +
-             self.face['top'][4] +
-             self.face['top'][5] + "   ");
-        print("   " + 
-             self.face['top'][6] +
-             self.face['top'][7] +
-             self.face['top'][8] + "   ");
+        print("   " +
+              self.face['top'][0] +
+              self.face['top'][1] +
+              self.face['top'][2] + "   ")
+        print("   " +
+              self.face['top'][3] +
+              self.face['top'][4] +
+              self.face['top'][5] + "   ")
+        print("   " +
+              self.face['top'][6] +
+              self.face['top'][7] +
+              self.face['top'][8] + "   ")
 
         # left, front, and right sides
-        print( 
-             self.face['left'][0] +
-             self.face['left'][1] +
-             self.face['left'][2] +
-             self.face['front'][0] +
-             self.face['front'][1] +
-             self.face['front'][2] +
-             self.face['right'][0] +
-             self.face['right'][1] +
-             self.face['right'][2]);
-        print( 
-             self.face['left'][3] +
-             self.face['left'][4] +
-             self.face['left'][5] +
-             self.face['front'][3] +
-             self.face['front'][4] +
-             self.face['front'][5] +
-             self.face['right'][3] +
-             self.face['right'][4] +
-             self.face['right'][5]);
-        print( 
-             self.face['left'][6] +
-             self.face['left'][7] +
-             self.face['left'][8] +
-             self.face['front'][6] +
-             self.face['front'][7] +
-             self.face['front'][8] +
-             self.face['right'][6] +
-             self.face['right'][7] +
-             self.face['right'][8]);
+        print(self.face['left'][0] +
+              self.face['left'][1] +
+              self.face['left'][2] +
+              self.face['front'][0] +
+              self.face['front'][1] +
+              self.face['front'][2] +
+              self.face['right'][0] +
+              self.face['right'][1] +
+              self.face['right'][2])
+        print(self.face['left'][3] +
+              self.face['left'][4] +
+              self.face['left'][5] +
+              self.face['front'][3] +
+              self.face['front'][4] +
+              self.face['front'][5] +
+              self.face['right'][3] +
+              self.face['right'][4] +
+              self.face['right'][5])
+        print(self.face['left'][6] +
+              self.face['left'][7] +
+              self.face['left'][8] +
+              self.face['front'][6] +
+              self.face['front'][7] +
+              self.face['front'][8] +
+              self.face['right'][6] +
+              self.face['right'][7] +
+              self.face['right'][8])
 
-       #bottom side 
-        print("   " + 
-             self.face['bottom'][0] +
-             self.face['bottom'][1] +
-             self.face['bottom'][2] + "   ");
-        print("   " + 
-             self.face['bottom'][3] +
-             self.face['bottom'][4] +
-             self.face['bottom'][5] + "   ");
-        print("   " + 
-             self.face['bottom'][6] +
-             self.face['bottom'][7] +
-             self.face['bottom'][8] + "   ");
+        # bottom side
+        print("   " +
+              self.face['bottom'][0] +
+              self.face['bottom'][1] +
+              self.face['bottom'][2] + "   ")
+        print("   " +
+              self.face['bottom'][3] +
+              self.face['bottom'][4] +
+              self.face['bottom'][5] + "   ")
+        print("   " +
+              self.face['bottom'][6] +
+              self.face['bottom'][7] +
+              self.face['bottom'][8] + "   ")
 
         # back side
-        print("   " + 
-             self.face['back'][0] +
-             self.face['back'][1] +
-             self.face['back'][2] + "   ");
-        print("   " + 
-             self.face['back'][3] +
-             self.face['back'][4] +
-             self.face['back'][5] + "   ");
-        print("   " + 
-             self.face['back'][6] +
-             self.face['back'][7] +
-             self.face['back'][8] + "   ");
+        print("   " +
+              self.face['back'][0] +
+              self.face['back'][1] +
+              self.face['back'][2] + "   ")
+        print("   " +
+              self.face['back'][3] +
+              self.face['back'][4] +
+              self.face['back'][5] + "   ")
+        print("   " +
+              self.face['back'][6] +
+              self.face['back'][7] +
+              self.face['back'][8] + "   ")
         print("***********************************\n\n")
 
     def solved_status(self):
         status = 100.0
         total_complete = 0
-        for face in ('front','top','bottom','left', 'right','back'):
+        for face in ('front', 'top', 'bottom', 'left',  'right', 'back'):
             color = self.face[face][4]
             face_complete = 0
-            for i in range(0,9):
-               if self.face[face][i] == color:
+            for i in range(0, 9):
+                if self.face[face][i] == color:
                     face_complete += 1
             total_complete += face_complete
         status = (total_complete / 54.0) * 100
@@ -416,16 +412,16 @@ class Cube(object):
         start_top = self.face['top'][4]
         count = 0
         while self.face['top'][4] != start_color:
-          if count == 4:
-            self.reorient('left')
-          else:
-            self.reorient('up')
-          count += 1
+            if count == 4:
+                self.reorient('left')
+            else:
+                self.reorient('up')
+            count += 1
         left_face_color = self.face['left'][4]
         front_face_color = self.face['front'][4]
         right_face_color = self.face['right'][4]
         back_face_color = self.face['back'][4]
-        for i in range(3,6):
+        for i in range(3, 6):
             if self.face['left'][i] != left_face_color:
                 status = False
             if self.face['front'][i] != front_face_color:
@@ -435,15 +431,15 @@ class Cube(object):
             if self.face['back'][8 - i] != back_face_color:
                 status = False
         while self.face['top'][4] != start_top:
-          if count == 4:
-            self.reorient('left')
-          else:
-            self.reorient('up')
-          count += 1
+            if count == 4:
+                self.reorient('left')
+            else:
+                self.reorient('up')
+            count += 1
         while self.face['front'][4] != start_front:
             self.reorient('left')
 
         return status
-    
+
     def isMisoriented(self, face, squareNum):
         return True
