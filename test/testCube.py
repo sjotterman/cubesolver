@@ -3,10 +3,11 @@
 import unittest
 from ..src import cube
 
+
 class TestCube(unittest.TestCase):
     def test_start_faces(self):
         myCube = cube.Cube()
-        for i in range(0,9):
+        for i in range(0, 9):
             self.assertEqual(myCube.face['right'][i], 'w')
             self.assertEqual(myCube.face['bottom'][i], 'o')
             self.assertEqual(myCube.face['front'][i], 'b')
@@ -23,11 +24,11 @@ class TestCube(unittest.TestCase):
         myCube.move('right', 'cw')
 
         # right side doesn't change
-        for i in range(0,9):
+        for i in range(0, 9):
             self.assertEqual(myCube.face['right'][i], 'w')
 
         # left side doesn't change
-        for i in range(0,9):
+        for i in range(0, 9):
             self.assertEqual(myCube.face['left'][i], 'y')
 
         # front side - only three right squares change
@@ -51,7 +52,6 @@ class TestCube(unittest.TestCase):
         self.assertEqual(myCube.face['top'][6], 'r')
         self.assertEqual(myCube.face['top'][7], 'r')
         self.assertEqual(myCube.face['top'][8], 'b')
-
 
         # bottom side - only three right squares change
         self.assertEqual(myCube.face['bottom'][0], 'o')
@@ -81,11 +81,11 @@ class TestCube(unittest.TestCase):
         myCube.move('right', 'cw')
 
         # right side doesn't change
-        for i in range(0,9):
+        for i in range(0, 9):
             self.assertEqual(myCube.face['right'][i], 'w')
 
         # left side doesn't change
-        for i in range(0,9):
+        for i in range(0, 9):
             self.assertEqual(myCube.face['left'][i], 'y')
 
         # front side - only three right squares change
@@ -109,7 +109,6 @@ class TestCube(unittest.TestCase):
         self.assertEqual(myCube.face['top'][6], 'r')
         self.assertEqual(myCube.face['top'][7], 'r')
         self.assertEqual(myCube.face['top'][8], 'o')
-
 
         # bottom side - only three right squares change
         self.assertEqual(myCube.face['bottom'][0], 'o')
@@ -140,7 +139,7 @@ class TestCube(unittest.TestCase):
         myCube.move('right', 'cw')
         myCube.move('right', 'cw')
 
-        for i in range(0,9):
+        for i in range(0, 9):
             self.assertEqual(myCube.face['front'][i], 'b')
             self.assertEqual(myCube.face['top'][i], 'r')
             self.assertEqual(myCube.face['left'][i], 'y')
@@ -153,11 +152,11 @@ class TestCube(unittest.TestCase):
         myCube.move('right', 'ccw')
 
         # right side doesn't change
-        for i in range(0,9):
+        for i in range(0, 9):
             self.assertEqual(myCube.face['right'][i], 'w')
 
         # left side doesn't change
-        for i in range(0,9):
+        for i in range(0, 9):
             self.assertEqual(myCube.face['left'][i], 'y')
 
         # front side - only three right squares change
@@ -181,7 +180,6 @@ class TestCube(unittest.TestCase):
         self.assertEqual(myCube.face['top'][6], 'r')
         self.assertEqual(myCube.face['top'][7], 'r')
         self.assertEqual(myCube.face['top'][8], 'g')
-
 
         # bottom side - only three right squares change
         self.assertEqual(myCube.face['bottom'][0], 'o')
@@ -209,7 +207,7 @@ class TestCube(unittest.TestCase):
         myCube = cube.Cube()
         myCube.reorient("up")
 
-        for i in range(0,9):
+        for i in range(0, 9):
             self.assertEqual(myCube.face['front'][i], 'o')
             self.assertEqual(myCube.face['top'][i], 'b')
             self.assertEqual(myCube.face['left'][i], 'y')
@@ -221,7 +219,7 @@ class TestCube(unittest.TestCase):
         myCube = cube.Cube()
         myCube.reorient("down")
 
-        for i in range(0,9):
+        for i in range(0, 9):
             self.assertEqual(myCube.face['front'][i], 'r')
             self.assertEqual(myCube.face['top'][i], 'g')
             self.assertEqual(myCube.face['left'][i], 'y')
@@ -234,11 +232,11 @@ class TestCube(unittest.TestCase):
         myCube.move('front', 'up')
 
         # right side doesn't change
-        for i in range(0,9):
+        for i in range(0, 9):
             self.assertEqual(myCube.face['right'][i], 'w')
 
         # left side doesn't change
-        for i in range(0,9):
+        for i in range(0, 9):
             self.assertEqual(myCube.face['left'][i], 'y')
 
         # front side - only three middle squares change
@@ -262,7 +260,6 @@ class TestCube(unittest.TestCase):
         self.assertEqual(myCube.face['top'][6], 'r')
         self.assertEqual(myCube.face['top'][7], 'b')
         self.assertEqual(myCube.face['top'][8], 'r')
-
 
         # bottom side - only three middle squares change
         self.assertEqual(myCube.face['bottom'][0], 'o')
@@ -291,11 +288,11 @@ class TestCube(unittest.TestCase):
         myCube.move('front', 'rup')
 
         # right side doesn't change
-        for i in range(0,9):
+        for i in range(0, 9):
             self.assertEqual(myCube.face['right'][i], 'w')
 
         # left side doesn't change
-        for i in range(0,9):
+        for i in range(0, 9):
             self.assertEqual(myCube.face['left'][i], 'y')
 
         # front side - only three right squares change
@@ -319,7 +316,6 @@ class TestCube(unittest.TestCase):
         self.assertEqual(myCube.face['top'][6], 'r')
         self.assertEqual(myCube.face['top'][7], 'r')
         self.assertEqual(myCube.face['top'][8], 'b')
-
 
         # bottom side - only three right squares change
         self.assertEqual(myCube.face['bottom'][0], 'o')
@@ -348,11 +344,11 @@ class TestCube(unittest.TestCase):
         myCube.move('front', 'lup')
 
         # right side doesn't change
-        for i in range(0,9):
+        for i in range(0, 9):
             self.assertEqual(myCube.face['right'][i], 'w')
 
         # left side doesn't change
-        for i in range(0,9):
+        for i in range(0, 9):
             self.assertEqual(myCube.face['left'][i], 'y')
 
         # front side - only three left squares change
@@ -376,7 +372,6 @@ class TestCube(unittest.TestCase):
         self.assertEqual(myCube.face['top'][6], 'b')
         self.assertEqual(myCube.face['top'][7], 'r')
         self.assertEqual(myCube.face['top'][8], 'r')
-
 
         # bottom side - only three left squares change
         self.assertEqual(myCube.face['bottom'][0], 'g')
@@ -405,11 +400,11 @@ class TestCube(unittest.TestCase):
         myCube.move('front', 'down')
 
         # right side doesn't change
-        for i in range(0,9):
+        for i in range(0, 9):
             self.assertEqual(myCube.face['right'][i], 'w')
 
         # left side doesn't change
-        for i in range(0,9):
+        for i in range(0, 9):
             self.assertEqual(myCube.face['left'][i], 'y')
 
         # front side - only three middle squares change
@@ -433,7 +428,6 @@ class TestCube(unittest.TestCase):
         self.assertEqual(myCube.face['top'][6], 'r')
         self.assertEqual(myCube.face['top'][7], 'g')
         self.assertEqual(myCube.face['top'][8], 'r')
-
 
         # bottom side - only three middle squares change
         self.assertEqual(myCube.face['bottom'][0], 'o')
@@ -462,11 +456,11 @@ class TestCube(unittest.TestCase):
         myCube.move('front', 'ldown')
 
         # right side doesn't change
-        for i in range(0,9):
+        for i in range(0, 9):
             self.assertEqual(myCube.face['right'][i], 'w')
 
         # left side doesn't change
-        for i in range(0,9):
+        for i in range(0, 9):
             self.assertEqual(myCube.face['left'][i], 'y')
 
         # front side - only three left squares change
@@ -490,7 +484,6 @@ class TestCube(unittest.TestCase):
         self.assertEqual(myCube.face['top'][6], 'g')
         self.assertEqual(myCube.face['top'][7], 'r')
         self.assertEqual(myCube.face['top'][8], 'r')
-
 
         # bottom side - only three left squares change
         self.assertEqual(myCube.face['bottom'][0], 'b')
@@ -519,11 +512,11 @@ class TestCube(unittest.TestCase):
         myCube.move('front', 'rdown')
 
         # right side doesn't change
-        for i in range(0,9):
+        for i in range(0, 9):
             self.assertEqual(myCube.face['right'][i], 'w')
 
         # left side doesn't change
-        for i in range(0,9):
+        for i in range(0, 9):
             self.assertEqual(myCube.face['left'][i], 'y')
 
         # front side - only three right squares change
@@ -548,7 +541,6 @@ class TestCube(unittest.TestCase):
         self.assertEqual(myCube.face['top'][7], 'r')
         self.assertEqual(myCube.face['top'][8], 'g')
 
-
         # bottom side - only three right squares change
         self.assertEqual(myCube.face['bottom'][0], 'o')
         self.assertEqual(myCube.face['bottom'][1], 'o')
@@ -571,17 +563,16 @@ class TestCube(unittest.TestCase):
         self.assertEqual(myCube.face['back'][7], 'g')
         self.assertEqual(myCube.face['back'][8], 'o')
 
-
     def test_start_then_front_right(self):
         myCube = cube.Cube()
         myCube.move('front', 'right')
 
         # top side doesn't change
-        for i in range(0,9):
+        for i in range(0, 9):
             self.assertEqual(myCube.face['top'][i], 'r')
 
         # bottom side doesn't change
-        for i in range(0,9):
+        for i in range(0, 9):
             self.assertEqual(myCube.face['bottom'][i], 'o')
 
         # front side - only three horizontal middle squares change
@@ -605,7 +596,6 @@ class TestCube(unittest.TestCase):
         self.assertEqual(myCube.face['right'][6], 'w')
         self.assertEqual(myCube.face['right'][7], 'w')
         self.assertEqual(myCube.face['right'][8], 'w')
-
 
         # back side - only three horizontal middle squares change
         self.assertEqual(myCube.face['back'][0], 'g')
@@ -634,11 +624,11 @@ class TestCube(unittest.TestCase):
         myCube.move('front', 'tright')
 
         # top side doesn't change
-        for i in range(0,9):
+        for i in range(0, 9):
             self.assertEqual(myCube.face['top'][i], 'r')
 
         # bottom side doesn't change
-        for i in range(0,9):
+        for i in range(0, 9):
             self.assertEqual(myCube.face['bottom'][i], 'o')
 
         # front side - only three top squares change
@@ -662,7 +652,6 @@ class TestCube(unittest.TestCase):
         self.assertEqual(myCube.face['right'][6], 'w')
         self.assertEqual(myCube.face['right'][7], 'w')
         self.assertEqual(myCube.face['right'][8], 'w')
-
 
         # back side - only three bottom squares change
         self.assertEqual(myCube.face['back'][0], 'g')
@@ -713,7 +702,7 @@ class TestCube(unittest.TestCase):
         self.assertEqual(myCube.face['bottom'][7], 'o')
         self.assertEqual(myCube.face['bottom'][8], 'g')
 
-        # front side 
+        # front side
         self.assertEqual(myCube.face['front'][0], 'w')
         self.assertEqual(myCube.face['front'][1], 'w')
         self.assertEqual(myCube.face['front'][2], 'w')
@@ -734,7 +723,6 @@ class TestCube(unittest.TestCase):
         self.assertEqual(myCube.face['right'][6], 'w')
         self.assertEqual(myCube.face['right'][7], 'w')
         self.assertEqual(myCube.face['right'][8], 'w')
-
 
         # back side
         self.assertEqual(myCube.face['back'][0], 'g')
@@ -763,11 +751,11 @@ class TestCube(unittest.TestCase):
         myCube.move('front', 'bleft')
 
         # top side doesn't change
-        for i in range(0,9):
+        for i in range(0, 9):
             self.assertEqual(myCube.face['top'][i], 'r')
 
         # bottom side doesn't change
-        for i in range(0,9):
+        for i in range(0, 9):
             self.assertEqual(myCube.face['bottom'][i], 'o')
 
         # front side - only three bottom squares change
@@ -791,7 +779,6 @@ class TestCube(unittest.TestCase):
         self.assertEqual(myCube.face['right'][6], 'g')
         self.assertEqual(myCube.face['right'][7], 'g')
         self.assertEqual(myCube.face['right'][8], 'g')
-
 
         # back side - only three top squares change
         self.assertEqual(myCube.face['back'][0], 'y')
@@ -820,11 +807,11 @@ class TestCube(unittest.TestCase):
         myCube.move('front', 'bright')
 
         # top side doesn't change
-        for i in range(0,9):
+        for i in range(0, 9):
             self.assertEqual(myCube.face['top'][i], 'r')
 
         # bottom side doesn't change
-        for i in range(0,9):
+        for i in range(0, 9):
             self.assertEqual(myCube.face['bottom'][i], 'o')
 
         # front side - only three bottom squares change
@@ -848,7 +835,6 @@ class TestCube(unittest.TestCase):
         self.assertEqual(myCube.face['right'][6], 'b')
         self.assertEqual(myCube.face['right'][7], 'b')
         self.assertEqual(myCube.face['right'][8], 'b')
-
 
         # back side - only three top squares change
         self.assertEqual(myCube.face['back'][0], 'w')
@@ -876,7 +862,7 @@ class TestCube(unittest.TestCase):
         myCube = cube.Cube()
         myCube.reorient("right")
 
-        for i in range(0,9):
+        for i in range(0, 9):
             self.assertEqual(myCube.face['front'][i], 'y')
             self.assertEqual(myCube.face['top'][i], 'r')
             self.assertEqual(myCube.face['left'][i], 'g')
@@ -888,7 +874,7 @@ class TestCube(unittest.TestCase):
         myCube = cube.Cube()
         myCube.reorient("left")
 
-        for i in range(0,9):
+        for i in range(0, 9):
             self.assertEqual(myCube.face['front'][i], 'w')
             self.assertEqual(myCube.face['top'][i], 'r')
             self.assertEqual(myCube.face['left'][i], 'b')
@@ -1031,11 +1017,11 @@ class TestCube(unittest.TestCase):
         myCube.move('front', 'cw')
 
         # back side doesn't change
-        for i in range(0,9):
+        for i in range(0, 9):
             self.assertEqual(myCube.face['back'][i], 'g')
 
         # front side doesn't change
-        for i in range(0,9):
+        for i in range(0, 9):
             self.assertEqual(myCube.face['front'][i], 'b')
 
         # left side - only three right squares change
@@ -1229,7 +1215,7 @@ class TestCube(unittest.TestCase):
     def test_start_reorient_cw(self):
         myCube = cube.Cube()
         myCube.reorient('cw')
-        for i in range(0,9):
+        for i in range(0, 9):
             self.assertEqual(myCube.face['front'][i], 'b')
             self.assertEqual(myCube.face['top'][i], 'y')
             self.assertEqual(myCube.face['left'][i], 'o')
@@ -1240,7 +1226,7 @@ class TestCube(unittest.TestCase):
     def test_start_reorient_ccw(self):
         myCube = cube.Cube()
         myCube.reorient('ccw')
-        for i in range(0,9):
+        for i in range(0, 9):
             self.assertEqual(myCube.face['front'][i], 'b')
             self.assertEqual(myCube.face['top'][i], 'w')
             self.assertEqual(myCube.face['left'][i], 'r')
@@ -1248,13 +1234,11 @@ class TestCube(unittest.TestCase):
             self.assertEqual(myCube.face['right'][i], 'o')
             self.assertEqual(myCube.face['back'][i], 'g')
 
-
     def test_start_tright_frontdown_front_left(self):
         myCube = cube.Cube()
-        myCube.move('front','tright')
-        myCube.move('front','down')
-        myCube.move('front','left')
-
+        myCube.move('front', 'tright')
+        myCube.move('front', 'down')
+        myCube.move('front', 'left')
 
         self.assertEqual(myCube.face['front'][0], 'y')
         self.assertEqual(myCube.face['front'][1], 'r')
@@ -1327,7 +1311,7 @@ class TestCube(unittest.TestCase):
 
     def test_move_cube_red_face_solved(self):
         myCube = cube.Cube()
-        self.assertEqual(myCube.isFirstLayerSolved('r'),True)
+        self.assertEqual(myCube.isFirstLayerSolved('r'), True)
         myCube.face['top'][2] = 'g'
         myCube.face['back'][7] = 'r'
         self.assertEqual(myCube.isFirstLayerSolved('r'), False)
@@ -1349,12 +1333,12 @@ class TestCube(unittest.TestCase):
     def test_start_reorient_up_rup_blue_middle_layer_solved(self):
         myCube = cube.Cube()
         myCube.reorient('up')
-        myCube.move('front','rup')
+        myCube.move('front', 'rup')
         self.assertEqual(myCube.isSecondLayerSolved('b'), False)
 
     def test_start_blue_rup_middle_layer_solved(self):
         myCube = cube.Cube()
-        myCube.move('front','rup')
+        myCube.move('front', 'rup')
         self.assertEqual(myCube.isSecondLayerSolved('b'), False)
 
     def test_start_rotate_second_layer_solved(self):
@@ -1378,16 +1362,16 @@ class TestCube(unittest.TestCase):
         myCube = cube.Cube()
 
         myCube.reorient('up')
-        myCube.move('front','down')
-        myCube.move('front','bright')
-        myCube.move('front','up')
+        myCube.move('front', 'down')
+        myCube.move('front', 'bright')
+        myCube.move('front', 'up')
         myCube.reorient('left')
-        myCube.move('front','ccw')
-        myCube.move('front','left')
-        myCube.move('front','cw')
+        myCube.move('front', 'ccw')
+        myCube.move('front', 'left')
+        myCube.move('front', 'cw')
         myCube.reorient('right')
         myCube.move('front', 'left')
-        myCube.move('front','ccw')
+        myCube.move('front', 'ccw')
         myCube.move('middle', 'right')
         myCube.move('front', 'cw')
         self.assertEqual(myCube.isFirstLayerSolved('b'), False)
@@ -1403,7 +1387,7 @@ class TestCube(unittest.TestCase):
 
     def test_start_front_rup_third_layer_solved(self):
         myCube = cube.Cube()
-        myCube.move('front','rup')
+        myCube.move('front', 'rup')
         self.assertEqual(myCube.isThirdLayerSolved('b'), False)
         self.assertEqual(myCube.isThirdLayerSolved('r'), False)
         self.assertEqual(myCube.isThirdLayerSolved('g'), False)
@@ -1413,7 +1397,7 @@ class TestCube(unittest.TestCase):
 
     def test_start_front_tright_third_layer_solved(self):
         myCube = cube.Cube()
-        myCube.move('front','tright')
+        myCube.move('front', 'tright')
         self.assertEqual(myCube.isThirdLayerSolved('b'), False)
         self.assertEqual(myCube.isThirdLayerSolved('r'), True)
         self.assertEqual(myCube.isThirdLayerSolved('g'), False)
@@ -1424,8 +1408,8 @@ class TestCube(unittest.TestCase):
     def test_reorientup_down_bright(self):
         myCube = cube.Cube()
         myCube.reorient('up')
-        myCube.move('front','down')
-        myCube.move('front','bright')
+        myCube.move('front', 'down')
+        myCube.move('front', 'bright')
 
         self.assertEqual(myCube.face['front'][0], 'o')
         self.assertEqual(myCube.face['front'][1], 'b')
@@ -1491,7 +1475,7 @@ class TestCube(unittest.TestCase):
         cube1 = cube.Cube()
         cube2 = cube.Cube()
         status = cube2.isSecondLayerSolved('y')
-        for i in range(0,9):
+        for i in range(0, 9):
             self.assertEqual(cube1.face['front'][i], cube2.face['front'][i])
             self.assertEqual(cube1.face['top'][i], cube2.face['top'][i])
             self.assertEqual(cube1.face['back'][i], cube2.face['back'][i])
@@ -1499,7 +1483,7 @@ class TestCube(unittest.TestCase):
             self.assertEqual(cube1.face['left'][i], cube2.face['left'][i])
             self.assertEqual(cube1.face['right'][i], cube2.face['right'][i])
         status = cube2.isSecondLayerSolved('g')
-        for i in range(0,9):
+        for i in range(0, 9):
             self.assertEqual(cube1.face['front'][i], cube2.face['front'][i])
             self.assertEqual(cube1.face['top'][i], cube2.face['top'][i])
             self.assertEqual(cube1.face['back'][i], cube2.face['back'][i])
@@ -1511,7 +1495,7 @@ class TestCube(unittest.TestCase):
         cube1 = cube.Cube()
         cube2 = cube.Cube()
         status = cube2.isFirstLayerSolved('y')
-        for i in range(0,9):
+        for i in range(0, 9):
             self.assertEqual(cube1.face['front'][i], cube2.face['front'][i])
             self.assertEqual(cube1.face['top'][i], cube2.face['top'][i])
             self.assertEqual(cube1.face['back'][i], cube2.face['back'][i])
@@ -1519,7 +1503,7 @@ class TestCube(unittest.TestCase):
             self.assertEqual(cube1.face['left'][i], cube2.face['left'][i])
             self.assertEqual(cube1.face['right'][i], cube2.face['right'][i])
         status = cube2.isFirstLayerSolved('g')
-        for i in range(0,9):
+        for i in range(0, 9):
             self.assertEqual(cube1.face['front'][i], cube2.face['front'][i])
             self.assertEqual(cube1.face['top'][i], cube2.face['top'][i])
             self.assertEqual(cube1.face['back'][i], cube2.face['back'][i])
@@ -1531,7 +1515,7 @@ class TestCube(unittest.TestCase):
         cube1 = cube.Cube()
         cube2 = cube.Cube()
         status = cube2.isThirdLayerSolved('y')
-        for i in range(0,9):
+        for i in range(0, 9):
             self.assertEqual(cube1.face['front'][i], cube2.face['front'][i])
             self.assertEqual(cube1.face['top'][i], cube2.face['top'][i])
             self.assertEqual(cube1.face['back'][i], cube2.face['back'][i])
@@ -1539,7 +1523,7 @@ class TestCube(unittest.TestCase):
             self.assertEqual(cube1.face['left'][i], cube2.face['left'][i])
             self.assertEqual(cube1.face['right'][i], cube2.face['right'][i])
         status = cube2.isThirdLayerSolved('g')
-        for i in range(0,9):
+        for i in range(0, 9):
             self.assertEqual(cube1.face['front'][i], cube2.face['front'][i])
             self.assertEqual(cube1.face['top'][i], cube2.face['top'][i])
             self.assertEqual(cube1.face['back'][i], cube2.face['back'][i])
@@ -1549,9 +1533,7 @@ class TestCube(unittest.TestCase):
 
     def test_new_cube_blue_misoriented_false(self):
         testCube = cube.Cube();
-        self.assertEqual(testCube.isMisoriented('front',8) , True)
+        self.assertEqual(testCube.isMisoriented('front', 8), True)
 
 if __name__ == "__main__":
     unittest.main()
-
-
