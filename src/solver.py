@@ -1,6 +1,5 @@
 # solver.py
 
-import cube
 
 
 class Solver(object):
@@ -15,7 +14,6 @@ class Solver(object):
         frontColor = target.face['front'][4]
         startFrontColor = frontColor
         leftColor = target.face['left'][4]
-        backColor = target.face['back'][4]
         loopCounter = 0
         while target.isFirstLayerSolved(topColor) is False:
             for i in range(0, 4):
@@ -145,7 +143,6 @@ class Solver(object):
             rightColor = target.face['right'][4]
             frontColor = target.face['front'][4]
             leftColor = target.face['left'][4]
-            backColor = target.face['back'][4]
             loopCounter += 1
 
             if loopCounter == 4000:
