@@ -1548,5 +1548,19 @@ class TestCube(unittest.TestCase):
         self.assertEqual(testCube.isCorrectLocation('top', 5), True)
         self.assertEqual(testCube.isCorrectLocation('top', 7), True)
 
+    def test_top_corner_cube_incorrect_loc(self):
+        testCube = cube.Cube()
+        testCube.move('front', 'ldown')
+        testCube.move('front', 'bright')
+        testCube.move('front', 'lup')
+        self.assertEqual(testCube.isCorrectLocation('top', 6), False)
+
+    def test_top_edge_cube_incorrect_loc(self):
+        testCube = cube.Cube()
+        testCube.move('front', 'down')
+        testCube.move('front', 'bright')
+        testCube.move('front', 'up')
+        self.assertEqual(testCube.isCorrectLocation('top', 7), False)
+
 if __name__ == "__main__":
     unittest.main()

@@ -436,4 +436,4 @@ class Cube(object):
         return True
 
     def isCorrectLocation(self, face, squareNum):
-        return True
+        return self.face[face][squareNum] == self.face[face][4]
