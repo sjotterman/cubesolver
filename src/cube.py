@@ -2,6 +2,7 @@
 
 import collections
 
+
 class Cube(object):
 
     def __init__(self):
@@ -14,11 +15,11 @@ class Cube(object):
         self.setup_face('back', 'g')
 
     def setup_face(self, face, color):
-        for i in range(0,9):
-            self.face[face][i] = color;
+        for i in range(0, 9):
+            self.face[face][i] = color
 
     def is_solved(self):
-        return True;
+        return True
 
     def move(self, face, dir):
         if dir == 'ccw':
@@ -89,34 +90,34 @@ class Cube(object):
             self.front_cubes_up('right')
 
             # right side cw
-            self.rotate_face('right','cw')
+            self.rotate_face('right', 'cw')
 
         if dir == 'lup':
             self.front_cubes_up('left')
 
             # left side ccw
-            self.rotate_face('left','ccw')
+            self.rotate_face('left', 'ccw')
 
         if dir == 'right':
             self.front_cubes_right('middle')
 
         if dir == 'tright':
             self.front_cubes_right('top')
-            
+
             # top side ccw
-            self.rotate_face('top','ccw')
+            self.rotate_face('top', 'ccw')
 
         if dir == 'bright':
             self.front_cubes_right('bottom')
-            
+
             # bottom side cw
             self.rotate_face('bottom', 'cw')
 
     def rotate_face(self, face, dir):
         if dir == 'ccw':
-            self.rotate_face(face,'cw')
-            self.rotate_face(face,'cw')
-            self.rotate_face(face,'cw')
+            self.rotate_face(face, 'cw')
+            self.rotate_face(face, 'cw')
+            self.rotate_face(face, 'cw')
             return
 
         temp_face = self.face[face]
@@ -225,14 +226,14 @@ class Cube(object):
             return
 
         if direction == 'up':
-            self.move('front','lup')
-            self.move('front','up')
-            self.move('front','rup')
-        
+            self.move('front', 'lup')
+            self.move('front', 'up')
+            self.move('front', 'rup')
+
         if direction == 'right':
-            self.move('front','tright')
-            self.move('front','right')
-            self.move('fromt','bright')
+            self.move('front', 'tright')
+            self.move('front', 'right')
+            self.move('fromt', 'bright')
 
         if direction == 'cw':
             self.reorient('left')
