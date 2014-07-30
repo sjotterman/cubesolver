@@ -3,6 +3,7 @@
 import cube
 import solver
 
+
 def main():
     myCube = cube.Cube()
     mySolver = solver.Solver()
