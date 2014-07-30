@@ -4,6 +4,7 @@ import unittest
 from ..src import solver
 from ..src import cube
 
+
 class TestSolver(unittest.TestCase):
 
     def test_createSolver(self):
@@ -37,7 +38,7 @@ class TestSolver(unittest.TestCase):
         self.assertEqual(myCube.isFirstLayerSolved('r'), False)
         self.assertEqual(mySolver.solve(myCube), True)
         self.assertEqual(myCube.isFirstLayerSolved('r'), True)
-    
+
     def testSolveThreeRedCubes(self):
         myCube = cube.Cube()
         mySolver = solver.Solver()
@@ -46,7 +47,7 @@ class TestSolver(unittest.TestCase):
         self.assertEqual(myCube.isFirstLayerSolved('r'), False)
         self.assertEqual(mySolver.solve(myCube), True)
         self.assertEqual(myCube.isFirstLayerSolved('r'), True)
-    
+
     def testSolveThreeRedCubes2(self):
         myCube = cube.Cube()
         mySolver = solver.Solver()
@@ -55,7 +56,7 @@ class TestSolver(unittest.TestCase):
         self.assertEqual(myCube.isFirstLayerSolved('r'), False)
         self.assertEqual(mySolver.solve(myCube), True)
         self.assertEqual(myCube.isFirstLayerSolved('r'), True)
-    
+
     def testSolveThreeRedCubes3(self):
         myCube = cube.Cube()
         mySolver = solver.Solver()
@@ -64,7 +65,7 @@ class TestSolver(unittest.TestCase):
         self.assertEqual(myCube.isFirstLayerSolved('r'), False)
         self.assertEqual(mySolver.solve(myCube), True)
         self.assertEqual(myCube.isFirstLayerSolved('r'), True)
-    
+
     def testSolveThreeRedCubes4(self):
         myCube = cube.Cube()
         mySolver = solver.Solver()
@@ -87,7 +88,7 @@ class TestSolver(unittest.TestCase):
         self.assertEqual(mySolver.solve(myCube), True)
         self.assertEqual(originalTopColor, myCube.face['top'][4])
         self.assertEqual(originalFrontColor, myCube.face['front'][4])
-    
+
     def testSolveDoesNotReorient2(self):
         myCube = cube.Cube()
         mySolver = solver.Solver()
@@ -98,12 +99,12 @@ class TestSolver(unittest.TestCase):
         self.assertEqual(mySolver.solve(myCube), True)
         self.assertEqual(originalTopColor, myCube.face['top'][4])
         self.assertEqual(originalFrontColor, myCube.face['front'][4])
-    
+
     def testSolveSwitchedCenters(self):
         myCube = cube.Cube()
         mySolver = solver.Solver()
         self.assertEqual(myCube.isFirstLayerSolved('r'), True)
-        
+
         myCube.move('front', 'up')
         myCube.move('front', 'up')
         myCube.move('front', 'right')
@@ -116,12 +117,11 @@ class TestSolver(unittest.TestCase):
         self.assertEqual(mySolver.solve(myCube), True)
         self.assertEqual(myCube.isFirstLayerSolved('r'), True)
 
-        
     def testSolveMiddleCubes(self):
         myCube = cube.Cube()
         mySolver = solver.Solver()
         self.assertEqual(myCube.isSecondLayerSolved('r'), True)
-        
+
         myCube.move('front', 'up')
         myCube.move('front', 'up')
         myCube.move('front', 'right')
@@ -133,7 +133,3 @@ class TestSolver(unittest.TestCase):
         self.assertEqual(myCube.isSecondLayerSolved('r'), False)
         self.assertEqual(mySolver.solve(myCube), True)
         self.assertEqual(myCube.isSecondLayerSolved('r'), True)
-
-          
-
-
