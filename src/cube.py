@@ -70,13 +70,6 @@ class Cube(object):
             self.reorient('right')
             return
 
-        face_front = self.face['front']
-        face_bottom = self.face['bottom']
-        face_back = self.face['back']
-        face_top = self.face['top']
-        face_right = self.face['right']
-        face_left = self.face['left']
-
         if dir == 'cw':
             self.reorient('right')
             self.move('front', 'rup')
@@ -333,7 +326,6 @@ class Cube(object):
 
     def isFirstLayerSolved(self, start_color):
         status = True
-        firstLayerFace = 'front'
         start_front = self.face['front'][4]
         start_top = self.face['top'][4]
         count = 0
@@ -372,7 +364,6 @@ class Cube(object):
 
     def isThirdLayerSolved(self, start_color):
         status = True
-        firstLayerFace = 'front'
         start_front = self.face['front'][4]
         start_top = self.face['top'][4]
         count = 0
