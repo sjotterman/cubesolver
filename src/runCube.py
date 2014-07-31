@@ -16,7 +16,7 @@ def main():
     myCube.move('front', 'up')
     myCube.move('front', 'up')
     myCube.print_cube()
-
+    print("Solving..")
     mySolver.solve(myCube)
     myCube.print_cube()
 
