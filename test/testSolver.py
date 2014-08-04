@@ -134,7 +134,7 @@ class TestSolver(unittest.TestCase):
     def testSwitchThreeEdgeCubesRedCCW1(self):
         myCube = cube.Cube()
         mySolver = solver.Solver()
-        mySolver.switchThreeEdges(myCube, 'red', 2, 'ccw')
+        mySolver.switchThreeEdges(myCube, 'red', 1, 'ccw')
         self.assertEqual(myCube.isSecondLayerSolved('r'), True)
         self.assertEqual(myCube.face['top'][0], 'r')
         self.assertEqual(myCube.face['top'][1], 'w')
