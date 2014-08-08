@@ -432,7 +432,7 @@ class Cube(object):
 
         return status
 
-    def isMisoriented(self, face, squareNum):
+    def isOrientedCorrectly(self, face, squareNum):
         return True
 
     def isCorrectLocation(self, face, squareNum):
