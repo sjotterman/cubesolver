@@ -235,6 +235,9 @@ class Solver(object):
         return True
 
     def switchThreeEdges(self, target, face, topEdgePiece, direction):
+        if topEdgePiece == 7:
+            target.reorient('right')
+            target.reorient('right')
         if topEdgePiece == 5:
             target.reorient('right')
         if topEdgePiece == 3:
@@ -252,4 +255,7 @@ class Solver(object):
         if topEdgePiece == 3:
             target.reorient('right')
         if topEdgePiece == 5:
+            target.reorient('left')
+        if topEdgePiece == 7:
+            target.reorient('left')
             target.reorient('left')
