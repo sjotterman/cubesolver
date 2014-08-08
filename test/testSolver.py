@@ -134,7 +134,7 @@ class TestSolver(unittest.TestCase):
     def testSwitchThreeEdgeCubesRedCCW1(self):
         myCube = cube.Cube()
         mySolver = solver.Solver()
-        mySolver.switchThreeEdges(myCube, 'red', 1, 'ccw')
+        mySolver.switchTopThreeEdges(myCube, 1, 'ccw')
         self.assertEqual(myCube.isSecondLayerSolved('r'), True)
         self.assertEqual(myCube.isThirdLayerSolved('r'), True)
         self.assertEqual(myCube.face['top'][0], 'r')
@@ -162,7 +162,7 @@ class TestSolver(unittest.TestCase):
     def testSwitchThreeEdgeCubesRedCCW2(self):
         myCube = cube.Cube()
         mySolver = solver.Solver()
-        mySolver.switchThreeEdges(myCube, 'red', 3, 'ccw')
+        mySolver.switchTopThreeEdges(myCube, 3, 'ccw')
         self.assertEqual(myCube.isSecondLayerSolved('r'), True)
         self.assertEqual(myCube.isThirdLayerSolved('r'), True)
         self.assertEqual(myCube.face['top'][0], 'r')
@@ -190,7 +190,7 @@ class TestSolver(unittest.TestCase):
     def testSwitchThreeEdgeCubesRedCCW3(self):
         myCube = cube.Cube()
         mySolver = solver.Solver()
-        mySolver.switchThreeEdges(myCube, 'red', 5, 'ccw')
+        mySolver.switchTopThreeEdges(myCube, 5, 'ccw')
         self.assertEqual(myCube.isSecondLayerSolved('r'), True)
         self.assertEqual(myCube.isThirdLayerSolved('r'), True)
         self.assertEqual(myCube.face['top'][0], 'r')
@@ -218,7 +218,7 @@ class TestSolver(unittest.TestCase):
     def testSwitchThreeEdgeCubesRedCCW4(self):
         myCube = cube.Cube()
         mySolver = solver.Solver()
-        mySolver.switchThreeEdges(myCube, 'red', 7, 'ccw')
+        mySolver.switchTopThreeEdges(myCube, 7, 'ccw')
         self.assertEqual(myCube.isSecondLayerSolved('r'), True)
         self.assertEqual(myCube.isThirdLayerSolved('r'), True)
         self.assertEqual(myCube.face['top'][0], 'r')
