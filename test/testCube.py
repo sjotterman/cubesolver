@@ -1548,6 +1548,26 @@ class TestCube(unittest.TestCase):
         self.assertEqual(testCube.isCorrectLocation('top', 5), True)
         self.assertEqual(testCube.isCorrectLocation('top', 7), True)
 
+    def test_top_edge_cubes_misoriented_correct_loc(self):
+        testCube = cube.Cube()
+        testCube.move('front', 'cw')
+        testCube.move('front', 'right')
+        testCube.move('front', 'right')
+        testCube.move('front', 'cw')
+        testCube.move('front', 'cw')
+        testCube.move('front', 'left')
+        testCube.move('front', 'left')
+        testCube.move('front', 'left')
+        testCube.move('front', 'cw')
+        testCube.move('front', 'right')
+        self.assertEqual(testCube.face['top'][4], 'r')
+        self.assertEqual(testCube.face['top'][7], 'b')
+        self.assertEqual(testCube.face['front'][1], 'r')
+        self.assertEqual(testCube.isCorrectLocation('top', 1), True)
+        self.assertEqual(testCube.isCorrectLocation('top', 3), True)
+        self.assertEqual(testCube.isCorrectLocation('top', 5), True)
+        self.assertEqual(testCube.isCorrectLocation('top', 7), True)
+
     def test_top_corner_cube_incorrect_loc(self):
         testCube = cube.Cube()
         testCube.move('front', 'ldown')
