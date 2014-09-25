@@ -437,6 +437,7 @@ class Cube(object):
 
     def isCorrectLocation(self, face, squareNum):
         adjacentFace = 'back'
+        adjacentFace2 = ''
         adjFace1 = {0: 'back',
                     1: 'back',
                     2: 'back',
@@ -446,6 +447,15 @@ class Cube(object):
                     7: 'front',
                     8: 'front'}
         adjacentFace = adjFace1[squareNum]
+        adjFace2 = {0: 'back',
+                    1: 'back',
+                    2: 'back',
+                    3: 'left',
+                    5: 'right',
+                    6: 'front',
+                    7: 'front',
+                    8: 'front'}
+        adjacentFace2 = adjFace2[squareNum]
         centerColor1 = self.face[face][4]
         centerColor2 = self.face[adjFace1[squareNum]][4]
         cubeColor1 = self.face[face][squareNum]
