@@ -233,3 +233,29 @@ class Solver(object):
         while target.face['front'][4] != startFrontColor:
             target.reorient('left')
         return True
+
+    def switchTopThreeEdges(self, target, topEdgePiece, direction):
+        if topEdgePiece == 7:
+            target.reorient('right')
+            target.reorient('right')
+        if topEdgePiece == 5:
+            target.reorient('right')
+        if topEdgePiece == 3:
+            target.reorient('left')
+
+        target.move('front', 'up')
+        target.move('front', 'tright')
+        target.move('front', 'down')
+        target.move('front', 'tright')
+        target.move('front', 'tright')
+        target.move('front', 'up')
+        target.move('front', 'tright')
+        target.move('front', 'down')
+
+        if topEdgePiece == 3:
+            target.reorient('right')
+        if topEdgePiece == 5:
+            target.reorient('left')
+        if topEdgePiece == 7:
+            target.reorient('left')
+            target.reorient('left')
