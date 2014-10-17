@@ -437,3 +437,6 @@ class Cube(object):
 
     def isCorrectLocation(self, face, squareNum):
         return self.face[face][squareNum] == self.face[face][4]
+
+    def switchTopThreeEdges(self, face, square, direction):
+        pass

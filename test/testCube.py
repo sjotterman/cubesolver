@@ -1562,5 +1562,23 @@ class TestCube(unittest.TestCase):
         testCube.move('front', 'up')
         self.assertEqual(testCube.isCorrectLocation('top', 7), False)
 
+    def switch_three_top_edge_cubes_ccw1(self):
+        testCube = cube.Cube()
+        testCube.switchTopThreeEdges('top', 2,'ccw')
+        self.assertEqual(myCube.isSecondLayerSolved('r'), True)
+        self.assertEqual(myCube.isThirdLayerSolved('r'), True)
+        self.assertEqual(testCube.face['top'][0], 'r')
+        self.assertEqual(testCube.face['top'][1], 'w')
+        self.assertEqual(testCube.face['top'][2], 'r')
+        self.assertEqual(testCube.face['top'][3], 'g')
+        self.assertEqual(testCube.face['top'][4], 'r')
+        self.assertEqual(testCube.face['top'][5], 'r')
+        self.assertEqual(testCube.face['top'][6], 'r')
+        self.assertEqual(testCube.face['top'][7], 'r')
+        self.assertEqual(testCube.face['top'][8], 'r')
+        self.assertEqual(testCube.face['left'][1], 'r')
+        self.assertEqual(testCube.face['right'][1], 'y')
+        self.assertEqual(testCube.face['back'][7], 'r')
+
 if __name__ == "__main__":
     unittest.main()
