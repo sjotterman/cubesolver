@@ -438,6 +438,64 @@ class Cube(object):
     def isCorrectLocation(self, face, squareNum):
         return self.face[face][squareNum] == self.face[face][4]
 
+    def adjacentEdge(self, face, squareNum):
+        if face == 'top':
+            if squareNum == 1:
+                return 'g'
+            if squareNum == 3:
+                return 'y'
+            if squareNum == 5:
+                return 'w'
+            if squareNum == 7:
+                return 'b'
+        if face == 'right':
+            if squareNum == 1:
+                return 'r'
+            if squareNum == 3:
+                return 'b'
+            if squareNum == 5:
+                return 'g'
+            if squareNum == 7:
+                return 'o'
+        if face == 'left':
+            if squareNum == 1:
+                return 'r'
+            if squareNum == 3:
+                return 'g'
+            if squareNum == 5:
+                return 'b'
+            if squareNum == 7:
+                return 'o'
+        if face == 'front':
+            if squareNum == 1:
+                return 'r'
+            if squareNum == 3:
+                return 'y'
+            if squareNum == 5:
+                return 'w'
+            if squareNum == 7:
+                return 'o'
+        if face == 'bottom':
+            if squareNum == 1:
+                return 'b'
+            if squareNum == 3:
+                return 'y'
+            if squareNum == 5:
+                return 'w'
+            if squareNum == 7:
+                return 'g'
+        if face == 'back':
+            if squareNum == 1:
+                return 'o'
+            if squareNum == 3:
+                return 'y'
+            if squareNum == 5:
+                return 'w'
+            if squareNum == 7:
+                return 'r'
+
+        return '?'
+
     def switchTopThreeEdges(self, face, square, direction):
         adjacentFace = 'back'
         adjacentFace2 = ''
