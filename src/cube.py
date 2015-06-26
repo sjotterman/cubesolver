@@ -441,58 +441,58 @@ class Cube(object):
     def adjacentEdge(self, face, squareNum):
         if face == 'top':
             if squareNum == 1:
-                return 'g'
+                return self.face['back'][7]
             if squareNum == 3:
-                return 'y'
+                return self.face['left'][1]
             if squareNum == 5:
-                return 'w'
+                return self.face['right'][1]
             if squareNum == 7:
-                return 'b'
+                return self.face['front'][1]
         if face == 'right':
             if squareNum == 1:
-                return 'r'
+                return self.face['top'][5]
             if squareNum == 3:
-                return 'b'
+                return self.face['front'][3]
             if squareNum == 5:
-                return 'g'
+                return self.face['back'][3]
             if squareNum == 7:
-                return 'o'
+                return self.face['bottom'][7]
         if face == 'left':
             if squareNum == 1:
-                return 'r'
+                return self.face['top'][3]
             if squareNum == 3:
-                return 'g'
+                return self.face['back'][5]
             if squareNum == 5:
-                return 'b'
+                return self.face['front'][3]
             if squareNum == 7:
-                return 'o'
+                return self.face['bottom'][3]
         if face == 'front':
             if squareNum == 1:
-                return 'r'
+                return self.face['top'][7]
             if squareNum == 3:
-                return 'y'
+                return self.face['left'][5]
             if squareNum == 5:
-                return 'w'
+                return self.face['right'][3]
             if squareNum == 7:
-                return 'o'
+                return self.face['bottom'][1]
         if face == 'bottom':
             if squareNum == 1:
-                return 'b'
+                return self.face['front'][7]
             if squareNum == 3:
-                return 'y'
+                return self.face['left'][7]
             if squareNum == 5:
-                return 'w'
+                return self.face['right'][7]
             if squareNum == 7:
-                return 'g'
+                return self.face['back'][1]
         if face == 'back':
             if squareNum == 1:
-                return 'o'
+                return self.face['bottom'][7]
             if squareNum == 3:
-                return 'y'
+                return self.face['left'][3]
             if squareNum == 5:
-                return 'w'
+                return self.face['right'][5]
             if squareNum == 7:
-                return 'r'
+                return self.face['top'][1]
 
         return '?'
 

@@ -1648,8 +1648,40 @@ class TestCube(unittest.TestCase):
         self.assertEqual(testCube.adjacentEdge('back', 7), 'r')
 
     def test_adjacent_color_edge_moved1(self):
-        # Todo: move pieces around, then test adjacentEdge()
-        pass
+        testCube = cube.Cube()
+        testCube.move('front', 'right')
+        testCube.move('front', 'right')
+        testCube.move('front', 'up')
+        testCube.move('front', 'up')
+        testCube.reorient('right')
+        testCube.move('front', 'up')
+        testCube.move('front', 'up')
+
+        self.assertEqual(testCube.adjacentEdge('top', 1), 'y')
+        self.assertEqual(testCube.adjacentEdge('top', 3), 'b')
+        self.assertEqual(testCube.adjacentEdge('top', 5), 'g')
+        self.assertEqual(testCube.adjacentEdge('top', 7), 'w')
+        self.assertEqual(testCube.adjacentEdge('right', 1), 'o')
+        self.assertEqual(testCube.adjacentEdge('right', 3), 'w')
+        self.assertEqual(testCube.adjacentEdge('right', 5), 'y')
+        self.assertEqual(testCube.adjacentEdge('right', 7), 'r')
+        self.assertEqual(testCube.adjacentEdge('left', 1), 'o')
+        self.assertEqual(testCube.adjacentEdge('left', 3), 'y')
+        self.assertEqual(testCube.adjacentEdge('left', 5), 'w')
+        self.assertEqual(testCube.adjacentEdge('left', 7), 'r')
+        self.assertEqual(testCube.adjacentEdge('front', 1), 'o')
+        self.assertEqual(testCube.adjacentEdge('front', 3), 'b')
+        self.assertEqual(testCube.adjacentEdge('front', 5), 'g')
+        self.assertEqual(testCube.adjacentEdge('front', 7), 'r')
+        self.assertEqual(testCube.adjacentEdge('bottom', 1), 'w')
+        self.assertEqual(testCube.adjacentEdge('bottom', 3), 'b')
+        self.assertEqual(testCube.adjacentEdge('bottom', 5), 'g')
+        self.assertEqual(testCube.adjacentEdge('bottom', 7), 'y')
+        self.assertEqual(testCube.adjacentEdge('back', 1), 'r')
+        self.assertEqual(testCube.adjacentEdge('back', 3), 'b')
+        self.assertEqual(testCube.adjacentEdge('back', 5), 'g')
+        self.assertEqual(testCube.adjacentEdge('back', 7), 'o')
+
 
     def test_adjacent_color_wrong_inputs(self):
         # Todo: incorrect inputs to adjacentEdge()
